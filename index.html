@@ -1,51 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Test de classement en français</title>
-		<link
-			rel="stylesheet"
-			type="text/css"
-			media="screen"
-			href="css/style.css"
-		/>
-		<script src="js/main.js" async></script>
-	</head>
 
-	<body>
-		<div class="container">
-			<div class="title">Test niveau A1 <br /></div>
+<head>
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Test de classement en français</title>
+	<link rel="stylesheet" type="text/css" media="screen" href="css/style.css" />
+	<script src="js/main.js" async></script>
+</head>
 
-			<div class="item">
-				<div class="item__inicio">
-					<img src="assets/img/img1.png" alt="maison" id="img_premier"/>
-				</div>
-				<div class="item__body">
-					<div class="item__title">
-						Bienvenue à Votre site de connaissances.
-					</div>		
-					<input type="radio" name="language" value="Français" id="Français" >
-					<label for="Français">Français</label><br>
-					<input type="radio" name="language" value="English">
-					<label for="english">English</label><br>
-								
-					<div class="item__description">
-						<p>Lisez calmement les énoncés de votre exercice</p>
-					</div>
-					<input type="submit" value="ENVOYER" />
-					<input type="submit" value="SUIVANT" />
-					<a href="menu.html" title="Menu">RETURNE MENU</a>
-				</div>
-			</div>
-		</div>
+<body>
+	<!-- Presentation -->
+	<article id="presentation-card" class="container">
 
 		<div class="item">
-			<div class="title">
-				<a>Compréhension écrite</a> <br /><br />
-				<p>Test niveau A1</p>
+			<h1>Test niveau A1</h1>
+
+			<div class="item__inicio">
+				<img src="assets/img/img1.png" alt="maison" id="img_premier" />
 			</div>
+			<div class="item__body">
+				<div class="item__title">
+					Bienvenue à Votre site de connaissances.
+				</div>
+				<input type="radio" name="language" value="Français" id="Français">
+				<label for="Français">Français</label><br>
+				<input type="radio" name="language" value="English">
+				<label for="english">English</label><br>
+
+				<div class="item__description">
+					<p>Lisez calmement les énoncés de votre exercice</p>
+				</div>
+				<input type="submit" value="ENVOYER" />
+				<input type="submit" value="SUIVANT" />
+				<a href="menu.html" title="Menu">RETURNE MENU</a>
+			</div>
+		</div>
+	</article>
+
+
+	<!-- Questions -->
+	<article id="written-understanding-card">
+		<h2>Compréhension écrite</h2>
+		<section>
 			<div class="item">
 				<div class="item__image">
 					<img src="assets/img/imga1.jpg" alt="" />
@@ -59,41 +57,47 @@
 						<p>Sélectionnez bonne reponse</p>
 					</div>
 
-				<input type="radio" name="question1" value="Image1" id="Image1" >
-				<label for="Image1">Image1</label><br>
-				<input type="radio" name="question1" value="Image2" id="Image2" >
-				<label for="Image2">Image2</label><br>
-				<input type="radio" name="question1" value="Image3" id="Image3" >
-				<label for="Image3">Image3</label><br>
-				<input type="radio" name="question1" value="Image4" id="Image4" >
-				<label for="Image4 ">Image4</label><br>
+					<input type="radio" name="question1" value="Image1" id="Image1">
+					<label for="Image1">Image1</label><br>
+					<input type="radio" name="question1" value="Image2" id="Image2">
+					<label for="Image2">Image2</label><br>
+					<input type="radio" name="question1" value="Image3" id="Image3">
+					<label for="Image3">Image3</label><br>
+					<input type="radio" name="question1" value="Image4" id="Image4">
+					<label for="Image4 ">Image4</label><br>
 
 				</div>
 			</div>
-		</div>
+		</section>
 
-		<div class="item">
-			<div class="item__image">
-				<img src="assets/img/imga10.jpg" alt="" />
-			</div>
-			<div class="item__body">
-				<div class="item__title">
-					De quelle couleur est cette image ?
+		<section>
+			<div class="item">
+				<div class="item__image">
+					<img src="assets/img/imga10.jpg" alt="" />
 				</div>
-				<input type="radio" name="question2" value="Jaune" id="Jaune" >
-				<label for="Jaune">Jaune</label>
-				<input type="radio" name="question2" value="Verte" id="Verte" >
-				<label for="Verte">Verte</label>
-				<input type="radio" name="question2" value="Rouge" id="Rouge" >
-				<label for="Rouge">Rouge</label>
-				<input type="radio" name="question2" value="Bleue " id="Bleue " >
-				<label for="Bleue ">Bleue </label>
+				<div class="item__body">
+					<div class="item__title">
+						De quelle couleur est cette image ?
+					</div>
+					<input type="radio" name="question2" value="Jaune" id="Jaune">
+					<label for="Jaune">Jaune</label>
+					<input type="radio" name="question2" value="Verte" id="Verte">
+					<label for="Verte">Verte</label>
+					<input type="radio" name="question2" value="Rouge" id="Rouge">
+					<label for="Rouge">Rouge</label>
+					<input type="radio" name="question2" value="Bleue " id="Bleue ">
+					<label for="Bleue ">Bleue </label>
 
+				</div>
 			</div>
-		</div>
+		</section>
 
-		<div class="item">
-			<div class="title"><a> Communication</a> <br /><br /></div>
+	</article>
+
+	<article id="communication-questions-card">
+		<h2>Communication</h2>
+
+		<section>
 			<div class="item">
 				<div class="item__image">
 					<img src="assets/img/img6.jpg" alt="" />
@@ -111,137 +115,157 @@
 					<div class="item__description"></div>
 				</div>
 			</div>
-		</div>
+		</section>
 
+	</article>
 
-		<div class="item">
-			<div class="title"><a> Grammaire</a> <br /><br /></div>
-			
-				<div class="item__image">
-					<p><li>Marie habite en France, …………… Paris</li></p>
-				<input type="radio" name="question1" value="au" id="au" >
+	<article id="grammar-questions-card">
+		<h2>Grammaire</h2>
+
+		<section>
+			<div class="item__image">
+				<p>
+					<li>Marie habite en France, …………… Paris</li>
+				</p>
+				<input type="radio" name="question1" value="au" id="au">
 				<label for="au">au</label>
-				<input type="radio" name="question1" value=" en " id=" en " >
+				<input type="radio" name="question1" value=" en " id=" en ">
 				<label for="Verte"> en </label>
-				<input type="radio" name="question1" value="à la " id="à la " >
+				<input type="radio" name="question1" value="à la " id="à la ">
 				<label for="à la ">à la </label>
-				<input type="radio" name="question1" value="à " id="à " >
+				<input type="radio" name="question1" value="à " id="à ">
 				<label for="à ">à </label>
-					
-				</div>
-			
-		
-				<div class="item__image">
-					<p><li>Amina ...................... le fromage avec du pain.</li></p>
-				<input type="radio" name="question2" value="sont" id="sont" >
+
+			</div>
+
+
+			<div class="item__image">
+				<p>
+					<li>Amina ...................... le fromage avec du pain.</li>
+				</p>
+				<input type="radio" name="question2" value="sont" id="sont">
 				<label for="sont">au</label>
-				<input type="radio" name="question2" value=" sommes " id=" sommes " >
+				<input type="radio" name="question2" value=" sommes " id=" sommes ">
 				<label for="Verte"> sommes </label>
-				<input type="radio" name="question2" value="est" id="est" >
+				<input type="radio" name="question2" value="est" id="est">
 				<label for="est ">à la </label>
-				<input type="radio" name="question2" value="ont " id="ont " >
+				<input type="radio" name="question2" value="ont " id="ont ">
 				<label for="à ">à </label>
-					
-				</div>
 
-				<div class="item__image">
-					<p>	<li>Carla et Nicolas ...................... mariés.</li></p>
-				
-					<input type="radio" name="question3" value="aimes" id="aimes" >
-					<label for="aimes">aimes</label>
-					<input type="radio" name="question3" value=" aiment " id=" aiment " >
-					<label for="aiment"> aiment</label>
-					<input type="radio" name="question3" value="aime" id="aime" >
-					<label for="aime ">aime </label>
-					<input type="radio" name="question3" value="aimons" id="aimons" >
-					<label for="aimons">aimons</label>
-				</div>
+			</div>
 
+			<div class="item__image">
+				<p>
+					<li>Carla et Nicolas ...................... mariés.</li>
+				</p>
+
+				<input type="radio" name="question3" value="aimes" id="aimes">
+				<label for="aimes">aimes</label>
+				<input type="radio" name="question3" value=" aiment " id=" aiment ">
+				<label for="aiment"> aiment</label>
+				<input type="radio" name="question3" value="aime" id="aime">
+				<label for="aime ">aime </label>
+				<input type="radio" name="question3" value="aimons" id="aimons">
+				<label for="aimons">aimons</label>
+			</div>
+
+			<div class="item__image">
 				<div class="item__image">
-					<div class="item__image">
-						<p><li>Sophie va acheter un pull …………… .</li></p>
-						
-					<input type="radio" name="question4" value="au musés." id="au musés." >
+					<p>
+						<li>Sophie va acheter un pull …………… .</li>
+					</p>
+
+					<input type="radio" name="question4" value="au musés." id="au musés.">
 					<label for="au musés.">aimes</label>
-					<input type="radio" name="question4" value=" au magasin " id="au magasin " >
+					<input type="radio" name="question4" value=" au magasin " id="au magasin ">
 					<label for="au magasin"> au magasin</label>
-					<input type="radio" name="question4" value="à l'hôtel de ville" id="à l'hôtel de ville" >
+					<input type="radio" name="question4" value="à l'hôtel de ville" id="à l'hôtel de ville">
 					<label for="à l'hôtel de ville ">à l'hôtel de ville </label>
-					<input type="radio" name="question4" value="à la boulangerie" id="à la boulangerie" >
+					<input type="radio" name="question4" value="à la boulangerie" id="à la boulangerie">
 					<label for="à la boulangerie">à la boulangerie</label>
-				
-					</div>
-				</div>
-				
-				<div class="item__image">
-					<p> <li>Sélectionnez la phrase correcte.</li></p>
-					<input type="radio" id="reponce1" name="question5" value="Traversez">
-					<label for="html">L'appartement ne pas est
-						dans le centre_ville.</label><br>
-					<input type="radio" id="reponce1-1" name="question5" value="CSS">
-					<label for="html">L'appartement n'est pas dans
-						le centre_ville.</label><br>
-					<input type="radio" id="css" name="question5" value="CSS">
-					<label for="html">L'appartement pas n'est dans
-						le centre_ville.</label><br>
-					<input type="radio" id="javascript" name="question5" value="JavaScript">
-					<label for="javascript">L'appartement est ne pas
-						dans le centre_ville.</label>
-				</div>
-				
 
-
-				<div class="item__image">
-					<p><li>Les chaises sont ……………</li></p>
-					<div class="item__image">
-						<img src="assets/img/imga (54).jpg" alt="" />
-					</div>
-					
-						
-					<input type="radio" name="question5" value="verts" id="verts" >
-					<label for="verts">verts</label>
-					<input type="radio" name="question5" value=" vert" id="vert " >
-					<label for="vert"> vert</label>
-					<input type="radio" name="question5" value="verte" id="verte" >
-					<label for="verte ">verte</label>
-					<input type="radio" name="question5" value="vertes" id="vertes" >
-					<label for="vertes">vertes</label>
-				
 				</div>
 			</div>
+
+		</section>
+
+		<section>
+			<div class="item__image">
+				<p>
+					<li>Sélectionnez la phrase correcte.</li>
+				</p>
+				<input type="radio" id="reponce1" name="question5" value="Traversez">
+				<label for="html">L'appartement ne pas est
+					dans le centre_ville.</label><br>
+				<input type="radio" id="reponce1-1" name="question5" value="CSS">
+				<label for="html">L'appartement n'est pas dans
+					le centre_ville.</label><br>
+				<input type="radio" id="css" name="question5" value="CSS">
+				<label for="html">L'appartement pas n'est dans
+					le centre_ville.</label><br>
+				<input type="radio" id="javascript" name="question5" value="JavaScript">
+				<label for="javascript">L'appartement est ne pas
+					dans le centre_ville.</label>
+			</div>
+
+
+
+			<div class="item__image">
+				<p>
+					<li>Les chaises sont ……………</li>
+				</p>
+				<div class="item__image">
+					<img src="assets/img/imga (54).jpg" alt="" />
+				</div>
+
+
+				<input type="radio" name="question5" value="verts" id="verts">
+				<label for="verts">verts</label>
+				<input type="radio" name="question5" value=" vert" id="vert ">
+				<label for="vert"> vert</label>
+				<input type="radio" name="question5" value="verte" id="verte">
+				<label for="verte ">verte</label>
+				<input type="radio" name="question5" value="vertes" id="vertes">
+				<label for="vertes">vertes</label>
+
+			</div>
+		</section>
+	</article>
+
+	<article id="lexical-questions-card">
+		<h2>Lexique</h2>
+		<section>
 			<div class="item">
-				<div class="title"><a> Lexique</a> <br /><br /></div>
-				<div class="item">
-					<div class="item__image">
-						<img src="assets/img/imga (64).jpg" alt="" />
-						<img src="assets/img/imga (65).jpg" alt="" />
-						<img src="assets/img/imga (66).jpg" alt="" />
-						<img src="assets/img/imga (67).jpg" alt="" />
-					</div>	
-						
-						
-				<input type="radio" name="Lexique1" value="Image1" id="Image1" >
-				<label for="Image1">Image1</label><br>
-				<input type="radio" name="Lexique1" value="Image2" id="Image2" >
-				<label for="Image2">Image2</label><br>
-				<input type="radio" name="Lexique1" value="Image3" id="Image3" >
-				<label for="Image3">Image3</label><br>
-				<input type="radio" name="Lexique1" value="Image4" id="Image4" >
-				<label for="Image4 ">Image4</label><br>
-											
-					</div>
-					<div class="item__body">
-						<div class="item__title">
-							Je mange du poulet tous les mercredis..
-						</div>
-						<div class="item__description">
-							<p>Cliquez sur l’image correspondante.</p>
-						</div>
-						<div class="item__description"></div>
-					</div>
+				<div class="item__image">
+					<img src="assets/img/imga (64).jpg" alt="" />
+					<img src="assets/img/imga (65).jpg" alt="" />
+					<img src="assets/img/imga (66).jpg" alt="" />
+					<img src="assets/img/imga (67).jpg" alt="" />
 				</div>
-			</div>
 
+
+				<input type="radio" name="Lexique1" value="Image1" id="Image1">
+				<label for="Image1">Image1</label><br>
+				<input type="radio" name="Lexique1" value="Image2" id="Image2">
+				<label for="Image2">Image2</label><br>
+				<input type="radio" name="Lexique1" value="Image3" id="Image3">
+				<label for="Image3">Image3</label><br>
+				<input type="radio" name="Lexique1" value="Image4" id="Image4">
+				<label for="Image4 ">Image4</label><br>
+
+			</div>
+			<div class="item__body">
+				<div class="item__title">
+					Je mange du poulet tous les mercredis..
+				</div>
+				<div class="item__description">
+					<p>Cliquez sur l’image correspondante.</p>
+				</div>
+				<div class="item__description"></div>
+			</div>
+		</section>
+
+		<section>
 			<div class="item">
 				<div class="title"><a>Sélectionnez le moi correcte.</a> <br /><br /></div>
 				<div class="item">
@@ -261,83 +285,105 @@
 						<div class="item__title">
 							<p>Sélectionnez la réponse correspondante.</p>
 						</div>
-						
+
 					</div>
 				</div>
 			</div>
+		</section>
 
-			
+		<section>
+
 			<div class="item">
-				
+
 				<div class="item__body">
 					<div class="item__title">Tous les matins, Sakura et Maurice .............. à 7h30.</div>
 					<div class="item__description">
-					
-					<input type="radio" id="css" name="Tav_language" value="se lever">
-					<label for="html">se lever</label><br>
-					<input type="radio" id="css" name="Tav_language" value="se lèver">
-					<label for="html">se lèver</label><br>
-					<input type="radio" id="css" name="Tav_language" value="nous levons">
-					<label for="html">nous levons </label><br>
-					<input type="radio" id="javascript" name="Tav_language" value="me lève">
-					<label for="javascript">me lève</label>
+
+						<input type="radio" id="css" name="Tav_language" value="se lever">
+						<label for="html">se lever</label><br>
+						<input type="radio" id="css" name="Tav_language" value="se lèver">
+						<label for="html">se lèver</label><br>
+						<input type="radio" id="css" name="Tav_language" value="nous levons">
+						<label for="html">nous levons </label><br>
+						<input type="radio" id="javascript" name="Tav_language" value="me lève">
+						<label for="javascript">me lève</label>
 						<p>Sélectionnez la réponse correspondante.</p>
 					</div>
 				</div>
 			</div>
+		</section>
 
-		
-				
+		<section>
 			<div class="item">
-				
+
 				<div class="item__body">
 					<div class="item__title">Sélectionnez la phrase correcte.</div>
 					<div class="item__description">
-					
-					<input type="radio" id="" name="Tav_language" value="Hier, les enfants ont allé à la piscie.">
-					<label for="html">Hier, les enfants ont allé à la piscie.</label><br>
-					<input type="radio" id="" name="Tav_language" value="Hier, les enfants a allé à a piscine">
-					<label for="html">Hier, les enfants a allé à a piscine.</label><br>
-					<input type="radio" id="" name="Tav_language" value="Hier, les enfants sont allé à la piscine">
-					<label for="html">Hier, les enfants sont allé à la piscine </label><br>
-					<input type="radio" id="" name="Tav_language" value="Hier, les enfants est allé à la piscine">
-					<label for="">Hier, les enfants est allé à la piscine</label>
+
+						<input type="radio" id="" name="Tav_language" value="Hier, les enfants ont allé à la piscie.">
+						<label for="html">Hier, les enfants ont allé à la piscie.</label><br>
+						<input type="radio" id="" name="Tav_language" value="Hier, les enfants a allé à a piscine">
+						<label for="html">Hier, les enfants a allé à a piscine.</label><br>
+						<input type="radio" id="" name="Tav_language" value="Hier, les enfants sont allé à la piscine">
+						<label for="html">Hier, les enfants sont allé à la piscine </label><br>
+						<input type="radio" id="" name="Tav_language" value="Hier, les enfants est allé à la piscine">
+						<label for="">Hier, les enfants est allé à la piscine</label>
 						<p>Sélectionnez la réponse correspondante.</p>
 					</div>
 				</div>
 			</div>
-			
-		
-		<div class="item">
-			<div class="title"><a>Production écrite</a> <br /><br /></div>
-			<p>Un(e) ami(e) arrive aujourd’hui à 14h à la gare. Vous lui envoyez un mail pour lui indiquer l’itinéraire de l’hôtel. Utilisez la carte.
-			Vous lui proposez un rendez-vous le soir. Précisez :</p>
 
-			<li>l’heure </li>
-			<li>le lieu </li>
-			<li>une ou plusieurs activités</li>
+		</section>
+	</article>
 
+	<article id="written-essay-questions-card">
+		<h2>Production écrite</h2>
+
+		<section>
 			<div class="item">
-				<div class="item__image">
-					<img src="assets/img/nice.png" alt="" />
+				<p>Un(e) ami(e) arrive aujourd’hui à 14h à la gare. Vous lui envoyez un mail pour lui indiquer
+					l’itinéraire
+					de
+					l’hôtel. Utilisez la carte.
+					Vous lui proposez un rendez-vous le soir. Précisez :</p>
+
+				<li>l’heure </li>
+				<li>le lieu </li>
+				<li>une ou plusieurs activités</li>
+
+				<div class="item">
+					<div class="item__image">
+						<img src="assets/img/nice.png" alt="" />
+					</div>
+
+					<form>
+						<table>
+							<tr>
+								<td> Email : </td>
+								<td><input type="text" name="email" placeholder="Votre email..." required></td>
+							</tr>
+							<tr>
+								<td> Sujet : </td>
+								<td><input type="text" name="sujet" placeholder="Votre Suje a parle..." required></td>
+							</tr>
+							<tr>
+								<td> Message : </td>
+								<td><textarea rows="5" cols="50" name="text" placeholder="Votre mesaje ..."
+										required></textarea>
+								</td>
+							</tr>
+							<tr>
+								<td colspan="2"> <input type="submit" name="send"></td>
+							</tr>
+						</table>
+					</form>
+
+
 				</div>
-				         
-				<form>
-					<table>
-						<tr> <td> Email : </td><td><input type="text" name="email" placeholder="Votre email..." required></td> </tr>
-						<tr> <td> Sujet : </td><td><input type="text" name="sujet" placeholder="Votre Suje a parle..."  required></td> </tr>
-						<tr> <td> Message : </td><td><textarea rows="5" cols="50" name="text" placeholder="Votre mesaje ..."  required></textarea> </td></tr>
-						<tr> <td colspan="2"> <input type="submit" name="send"></td> </tr>
-					</table>
-				</form>
-
-
 			</div>
-		</div>
+		</section>
+	</article>
 
+</body>
 
-
-
-
-	</body>
 </html>
