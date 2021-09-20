@@ -1,3 +1,0 @@
-# stagesimplone
-
-bonjour 

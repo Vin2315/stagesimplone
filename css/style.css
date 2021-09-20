@@ -1,58 +1,104 @@
-body, html {
-  margin: 0;
-  padding: 0;
-  min-height: 100%;
-  overflow-x: hidden;
+body,
+html {
+	margin: 0;
+	padding: 0;
+	min-height: 100%;
+	overflow-x: hidden;
 }
 
 body {
-  font-family: sans-serif;
-  padding: 50px;
-  background: linear-gradient(40deg, #98c26775, #f3e946) center center no-repeat;
-  line-height: 1;
+	font-family: sans-serif;
+	padding: 20px;
+	background: linear-gradient(40deg, #98c26775, #f3e946) center center
+		no-repeat;
+	line-height: 1;
+}
+
+img {
+	width: 500px;
+	height: 4000px;
+}
+
+#img_premier {
+	width: 80%;
+	height: 80%;
+}
+
+.nav-bg {
+	background-color: rgb(243, 238, 233);
 }
 
 .title {
-  font-size: 25px;
-  color: #FFF;
-  font-weight: bold;
-  margin-bottom: 25px;
+	font-size: 25px;
+	color: rgb(14, 12, 12);
+	font-weight: bold;
+	margin-bottom: 25px;
+}
+
+.navegation-principal a {
+	color: rgb(20, 92, 160); /*color de las letras de la imagen */
+	text-decoration: none; /*quita subliniado del texto */
+	font-size: 2rem; /*tamano de letras del menu*/
+	font-weight: 50; /*es poner o no negrita al texto del menu*/
+	padding: 1rem; /*ancho de mi barra*/
+	display: block; /*senala el espacio */
+	text-align: center; /*pone mi menu en columnas CENTRADO*/
+}
+
+.navegation-principal {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-evenly;
+}
+
+@media (max-width: 768px) {
+	.navegacion-principal {
+		flex-direction: column; /* separa las menu en lina con opcion row */
+		justify-content: space-between; /* muebe contenido al horizontal; mi texto a la izquierda flex-start*/
+	}
+}
+.navegation-principal a:hover {
+	background-color: rgb(120, 129, 115);
+	color: var(--dark);
 }
 
 .item {
-  margin: 30px 10px;
-  background-color: #fff;
-  box-shadow: 0 15px 35px #3232321a,0 5px 15px #0000001a;
-  transition: transform 0.3s;
-  transform: translate3d(0, -1px, 0);
+	margin: 20px 20px;
+	background-color: #fff;
+	box-shadow: 0 15px 35px #3232321a, 0 5px 15px #0000001a;
+	transition: transform 0.3s;
+	transform: translate3d(0, -1px, 0);
 }
 
-.item:hover  {
-  transform: translate3d(0, -10px, 0);
+.item:hover {
+	transform: translate3d(0, -10px, 0);
 }
 
 .item img {
-  display: block;
-  width: 100%;
-  height: auto;
+	display: block;
+	width: 20%;
+	height: 20%;
+	margin: 10px inline-block;
 }
 
 .item__body {
-  padding: 25px;
+	padding: 25px;
 }
 
 .item__title {
-  font-size: 24px;
-  margin-bottom: 5px;
-  font-weight: bold;
-  color: #232323;
+	font-size: 14px;
+	margin-bottom: 3%;
+	font-weight: bold;
+	color: #232323;
 }
 
 .item__description {
-  color: #585858;
+	color: #585858;
 }
 
-.items {
-  position: relative;
+.item_inicio {
+	display: block;
+	width: 200%;
+	height: 200%;
+	margin: 10px inline-block;
 }
-
