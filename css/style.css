@@ -14,6 +14,32 @@ body {
 	line-height: 1;
 }
 
+article {
+	margin: 20px 20px;
+	background-color: #fff;
+	box-shadow: 0 15px 35px #3232321a, 0 5px 15px #0000001a;
+	transition: transform 0.3s;
+	transform: translate3d(0, -1px, 0);
+}
+article:hover {
+	transform: translate3d(0, -10px, 0);
+}
+
+article img {
+	display: block;
+	width: 20%;
+	height: 20%;
+	margin: 10px inline-block;
+}
+
+.img-answer-block {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content: space-around;
+	align-items: stretch;
+}
+
 img {
 	width: 500px;
 	height: 400px;
