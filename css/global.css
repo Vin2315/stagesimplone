@@ -43,16 +43,6 @@ article:hover {
 	transform: translate3d(0, -10px, 0);
 }
 
-article img {
-	display: flex;
-	flex-direction: row-reverse;
-	justify-content: baseline;
-	align-items: center;
-	font-size: 100px;
-	width: auto;
-	height: auto;
-}
-
 img-answer-block {
 	display: flex;
 	flex-direction: row;
