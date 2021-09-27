@@ -175,18 +175,26 @@ img#main-img:hover {
 	opacity: 0.8;
 }
 
-/* formuler*/
-div {
-	margin: 20;
+#formulaire-production-ecrite {
+	display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
+
 .champ-formulaire {
 	margin: 20px 10px 5px 8px;
-	padding: 50px 50px;
-	display: inline-block;
-	padding: auto;
+	padding: 10px 20px;
+	width: 50%;
+	display: flex;
+	flex-direction: column;
 	text-decoration: none;
 	font-size: 20px;
 	background-color: rgb(54, 56, 59);
 	color: rgb(204, 179, 179);
 	text-decoration: none;
+}
+
+.champ-formulaire label {
+	margin-bottom: 10px;
 }
