@@ -11,6 +11,11 @@ article#presentation-card {
 	padding: 20px;
 	border-radius: 10px;
 	margin: 40px;
+	margin: 20px 20px;
+	background-color: #fff;
+	box-shadow: 0 15px 35px #3232321a, 0 5px 15px #0000001a;
+	transition: transform 0.3s;
+	transform: translate3d(0, -1px, 0);
 }
 /*gra.2*/
 .img-answer-block {
@@ -27,6 +32,13 @@ article#presentation-card {
 	height: 162px;
 	margin: 10px;
 }
+.question2__img {
+	width: 25%;
+	height: 100px;
+	background-color: yellow;
+	margin-left: auto;
+	margin-right: auto;
+}
 
 .img-answer input {
 	display: none;
@@ -41,20 +53,6 @@ article#presentation-card {
 	transition: filter 0.4s;
 	filter: grayscale(0%);
 }
-
-.nav contenedor {
-	width: 90%;
-	flex-direction: row;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	padding: 20px 50px;
-}
-
-
-
-
-
 
 /* titres */
 

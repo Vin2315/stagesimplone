@@ -14,15 +14,14 @@
 
 <body>
 	<!-- Presentation -->
-	<article id="presentation-card" class="container">
+	<article id="presentation-card">
+	
 
 		<h1>Test niveau A1</h1>
-		<h3>
-			Bienvenue à Votre site de connaissances.
-		</h3>
+		<h3>Bienvenue à Votre site de connaissances.</h3>
 		<img src="assets/img/img1.png" alt="maison" id="main-img" />
 
-		<div id="language-choice">
+		<div id="button">
 			<div class="radio-button">
 				<input type="radio" name="language" value="Français" id="french">
 				<label for="french">Français</label>
@@ -38,20 +37,27 @@
 		<p>Lisez calmement les énoncés de votre exercice</p>
 
 		<div id="page-control">
-			<input type="submit" value="ENVOYER" />
-			<input type="submit" value="SUIVANT" />
-			<a href="menu.html" title="Menu">RETURNE MENU</a>
+			<a href ="#" class="btn">ENVOYER <a>
 		</div>
+
+		<div id="page-control">
+			<a href ="#" class="btn">SUIVANT" <a>
+		</div>
+		
+		<div id="page-control">
+			<a href ="menu.html" class="returne" title="Menu">RETURNE MENU" <a>
+		</div>
+
 
 	</article>
 
 	<form>
 
 		<!-- Questions -->
-		<h2>Compréhension écrite</h2>
-		<article id="written-understanding-card" class="question-card">
+		<article id="written-understanding-card" >
+			<h2>Compréhension écrite</h2>
 		
-			<section>
+		<section class="question-card">
 				<h3>Sélectionnez l’infirmier..</h3>
 
 				<div class="img-answer-block">
@@ -76,12 +82,10 @@
 					</div>
 
 				</div>
-			</section>
+		</section>
 
-			<hr />
-			<section>
-				<div class="item__image">
-					<img src="assets/img/imga10.jpg" alt="" />
+			<section class="question-card">
+				<div class="question2__img">
 				</div>
 				<div class="item__body">
 					<h3>
@@ -95,79 +99,88 @@
 					<label for="q2-r3">Rouge</label>
 					<input type="radio" name="question2" value="Bleue " id="q2-r4">
 					<label for="q2-r4">Bleue </label>
-
+	
 				</div>
 			</section>
-
 		</article>
 
-		<h2>Communication</h2>
-		<article id="written-understanding-card" class="question-card">
-		
-			<nav class="contenedor">
-				<section>
+		<article id="card-communication">			
+			<h2>Communication</h2>
+			<section class="question-card">
+				
 					<h3>Sélectionnez l’image correspondante à l'audio.</h3>
+						
 					<div class="item__body">
-						<source src="assets/audio/audio2.mp3" controls> <audio />
 						<audio controls>
+						<source src="assets/audio/audio2.mp3" controls>
 						</audio>
 					</div>
 
-					<div class="img-answer">
-						<input type="radio" name="question3" value="Image1" id="q3-r1">
-						<label for="q3-r1"><img src="assets/img/imga (59).jpg" alt="" /></label><br>
+					<div class="img-answer-block">
+
+						<div class="img-answer">
+							<input type="radio" name="question3" value="Image1" id="q3-r1">
+							<label for="q3-r1"><img src="assets/img/imga (59).jpg" alt="" /></label><br>
+						</div>
+
+
+						<div class="img-answer">
+							<input type="radio" name="question3" value="Image2" id="q3-r2">
+							<label for="q3-r2"><img src="assets/img/imga (60).jpg" alt="" /></label><br>
+						</div>
+
+						<div class="img-answer">
+							<input type="radio" name="question3" value="Image3" id="q3-r3">
+							<label for="q3-r3"><img src="assets/img/imga (61).jpg" alt="" /></label><br>
+						</div>
+
+
+						<div class="img-answer">
+							<input type="radio" name="question3" value="Image4" id="q3-r4">
+							<label for="q3-r4 "><img src="assets/img/imga (62).jpg" alt="" /></label><br>
+						</div>		
 					</div>
-
-
-					<div class="img-answer">
-						<input type="radio" name="question3" value="Image2" id="q3-r2">
-						<label for="q3-r2"><img src="assets/img/imga (60).jpg" alt="" /></label><br>
-					</div>
-
-					<div class="img-answer">
-						<input type="radio" name="question3" value="Image3" id="q3-r3">
-						<label for="q3-r3"><img src="assets/img/imga (61).jpg" alt="" /></label><br>
-					</div>
-
-
-					<div class="img-answer">
-						<input type="radio" name="question3" value="Image4" id="q3-r4">
-						<label for="q3-r4 "><img src="assets/img/imga (62).jpg" alt="" /></label><br>
-					</div>
-
-					<div class="item__description">
-						<p>Sélectionnez la bonne reponse</p>
-					</div>
-
 				</section>
-			</nav>
-		</article>
-
-		<article id="written-understanding-card" class="question-card">
-
-			<section>
-				<div class="item__body">
+			
+					<section class="question-card">
 					<h3>Sélectionnez l’image correspondante à l'audio.</h3>
-					<audio controls>
-						<source src="assets/audio/audio1.mp3" controls> <audio />
-					</audio>
-				</div>
-				<input type="radio" name="question3" value="Image1" id="q3-r1">
-				<label for="q3-r1"><img src="assets/img/img6.jpg" alt="" /></label><br>
-				<input type="radio" name="question3" value="Image2" id="q3-r2">
-				<label for="q3-r2"><img src="assets/img/imga (40).jpg" alt="" /></label><br>
-				<input type="radio" name="question3" value="Image3" id="q3-r3">
-				<label for="q3-r3"><img src="assets/img/imga (20).jpg" alt="" /></label><br>
-				<input type="radio" name="question3" value="Image4" id="q3-r4">
-				<label for="q3-r4 "><img src="assets/img/imga (11).jpg" alt="" /></label><br>
+
+					<div class="item__body">
+						<audio controls>
+						<source src="assets/audio/audio1.mp3" controls>
+						</audio>
+					</div>
+
+					<div class="img-answer-block">
+										
+						<div class="img-answer">
+							<input type="radio" name="question3" value="Image1" id="q3-r1">
+							<label for="q3-r1"><img src="assets/img/img6.jpg" alt="" /></label><br>
+						</div>
+						
+						<div class="img-answer">
+							<input type="radio" name="question3" value="Image2" id="q3-r2">
+							<label for="q3-r2"><img src="assets/img/imga (40).jpg" alt="" /></label><br>
+						</div>
+						
+						<div class="img-answer">
+							<input type="radio" name="question3" value="Image3" id="q3-r3">
+							<label for="q3-r3"><img src="assets/img/imga (20).jpg" alt="" /></label><br>
+						</div>
+						
+						<div class="img-answer">
+							<input type="radio" name="question3" value="Image4" id="q3-r4">
+							<label for="q3-r4 "><img src="assets/img/imga (11).jpg" alt="" /></label><br>
+						</div>
+					</div>
 			</section>
-
 		</article>
-
-		<h2>Grammaire</h2>
-		<article id="grammar-questions-card" class="question-card">
 		
-			<section class="texte-a-trou">
+
+		<article id="grammar-questions-card" >
+			<h2>Grammaire</h2>
+		
+			<section class="texte-a-trou question-card" >
 				<h4>Marie habite en France, …………… Paris</h4>
 
 				<div class="answer-block">
@@ -182,7 +195,7 @@
 				</div>
 			</section>
 
-			<section class="texte-a-trou">
+			<section class="texte-a-trou question-card">
 				<h4>Amina ...................... le fromage avec du pain.</h4>
 
 				<div class="answer-block">
@@ -197,8 +210,7 @@
 				</div>
 			</section>
 
-
-			<section class="texte-a-trou">
+			<section class="texte-a-trou question-card">
 				<h4>Carla et Nicolas ...................... mariés.</h4>
 
 				<div class="answer-block">
@@ -213,8 +225,7 @@
 				</div>
 			</section>
 
-
-			<section class="texte-a-trou">
+			<section class="texte-a-trou question-card">
 				<h4>Sophie va acheter un pull …………… .</h4>
 
 				<div class="answer-block">
@@ -229,8 +240,7 @@
 				</div>
 			</section>
 
-
-			<section class="texte-a-trou">
+			<section class="texte-a-trou question-card">
 				<h4>Sélectionnez la phrase correcte.</h4>
 
 				<div class="answer-block">
@@ -246,11 +256,10 @@
 					<input type="radio" id="q8-r4" name="question8" value="JavaScript">
 					<label for="q8-r4">L'appartement est ne pas
 						dans le centre_ville.</label>
-
 				</div>
 			</section>
-
-			<section class="texte-a-trou">
+			
+			<section class="texte-a-trou question-card">
 				<h4>Les chaises sont ……………</h4>
 				<img src="assets/img/imga (54).jpg" alt="" />
 				<div class="answer-block">
@@ -264,31 +273,38 @@
 					<label for="q9-r4">vertes</label>
 				</div>
 			</section>
-
 		</article>
 		
-		<h2>Lexique</h2>
-		<article id="lexical-questions-card" class="question-card">
-			
-
-			<section>
-				<div class="item__body">
-					<h3>Je mange du poulet tous les mercredis..</h3>
-
+		<article id="lexical-questions-card">
+			<h2>Lexique</h2>
+			<section class="question-card">
+				<h3>Je mange du poulet tous les mercredis..</h3>
+				
+				<div class="img-answer-block">
+					
+					<div class="img-answer">
 					<input type="radio" name="question10" value="Image1" id="q10-r1">
 					<label for="q10-r1"><img src="assets/img/imga (64).jpg" alt="" /></label><br>
+					</div>
+					
+					<div class="img-answer">
 					<input type="radio" name="question10" value="Image2" id="q10-r2">
 					<label for="q10-r2"><img src="assets/img/imga (65).jpg" alt="" /></label><br>
+					</div>
+					
+					<div class="img-answer">
 					<input type="radio" name="question10" value="Image3" id="q10-r3">
-					<label for="q10-r3"><img src="assets/img/imga (66).jpeg" alt="" /></label><br>
+					<label for="q10-r3"><img src="assets/img/imga (66).jpg" alt="" /></label><br>
+					</div>
+					
+					<div class="img-answer">
 					<input type="radio" name="question10" value="Image4" id="q10-r4">
-					<label for="q10-r4 "><img src="assets/img/imga (67).jpg" alt="" /></label><br>
-
+					<label for="q10-r4"><img src="assets/img/imga (67).jpg" alt="" /></label><br>
+					</div>
 				</div>
 			</section>
-
-
-			<section>
+			
+			<section class="question-card">
 				<img src="assets/img/imga (9).png" alt="" />
 				<div class="item__body">
 					<h3>Sélectionnez le mot correct. </h3>
@@ -303,8 +319,7 @@
 
 				</div>
 			</section>
-
-			<section class="texte-a-trou">
+			<section class="texte-a-trou question-card">
 				<h4>Tous les matins, Sakura et Maurice .............. à 7h30.</h4>
 
 				<div class="answer-block">
@@ -319,7 +334,8 @@
 				</div>
 			</section>
 
-			<section class="texte-a-trou">
+
+			<section class="texte-a-trou question-card">
 				<h4>Sélectionnez la phrase correcte.</h4>
 
 				<div class="answer-block">
@@ -336,10 +352,10 @@
 			</section>
 		</article>
 		
-		<h2>Production écrite</h2>
-		<article id="written-essay-questions-card" class="question-card">
+		<article id="written-essay-questions-card">
+			<h2>Production écrite (optionnel)</h2>
 			
-			<section>
+			<section class="question-card">
 				<p>Un(e) ami(e) arrive aujourd’hui à 14h à la gare. Vous lui envoyez un mail pour lui indiquer
 					l’itinéraire de l’hôtel. Utilisez la carte. Vous lui proposez un rendez-vous le soir. Précisez :
 				</p>
@@ -349,49 +365,52 @@
 					<li>une ou plusieurs activités</li>
 				</ul>
 				<img src="assets/img/nice.png" alt="" />
-
-
-			<div class="Évaluation">
-				<header>Évaluation de la production orale</header>
+				<br><br><br>
+		
+			<div class="evaluation">
+				<h3>Évaluation de la production ecrite</h3>
 				<form action="traitement.php" method="POST">
-					<div class="">
+					
+					<div class="champ-formulaire">
 						<div class="prenom">
-							<label for="">Votre Prenom</label>
+							<label for="">Prenom</label>
 							<input type="text" name="prenom" placeholder="Votre prénom" />
 							<i class="fas fa-user"></i>
 						</div>
 
-						<div class=""> 
+						<div > 
+							<label for="">Nom</label>
 							<input type="text" name="nom" placeholder="Votre nom de famille"
 							/>
 							<i class="fas fa-user"></i>
 						</div>
 
-						<div class="">
+						<div >
+							<label for="">Numéro de téléphone</label>
 							<input type="tel" name="tel" placeholder="Votre telephone" />
 							<i class="fas fa-user"></i>
 						</div>
 
-						<div class="">
+						<div >
+							<label for="">Email</label>
 							<input type="mail" name="mail" placeholder="Votre email" />
 							<i class="fas fa-user"></i>
 						</div>
 
-						<div class="">
+						<div>
 							<textarea name="message" placeholder="Votre message">
 							</textarea>
 							<i class="fas fa-user"></i>
 						</div>
 
-						<div class="Prenom">
+						<div>
 							<input type="submit" name="submit" value="envoyer" />
 							<i class="fas fa-user"></i>
 						</div>
 					</div>
 				</form>
-			</div>		
-		</article>
-
+			</div>	
+		</article>	
 	</form>
 </body>
 

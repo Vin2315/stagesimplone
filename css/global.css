@@ -4,6 +4,7 @@ html {
 	padding: 0;
 	min-height: 100%;
 	overflow-x: hidden;
+	font-size: 20px;
 }
 
 body {
@@ -23,24 +24,20 @@ h1 {
 	border-radius: 30px;
 	padding: 10px;
 	margin: 0px;
+	font-size: 10rm;
 }
 
-h4,h3,h2{
-
+h4,
+h3 {
 	border-width: 1px;
 	padding: 10px;
 	margin: 0px;
+	text-align: center;
 }
 
-article {
-	margin: 20px 20px;
-	background-color: #fff;
-	box-shadow: 0 15px 35px #3232321a, 0 5px 15px #0000001a;
-	transition: transform 0.3s;
-	transform: translate3d(0, -1px, 0);
-}
 article:hover {
 	transform: translate3d(0, -10px, 0);
+	border: 1px rgb(255, 17, 0);
 }
 
 img-answer-block {
@@ -146,6 +143,50 @@ img#main-img:hover {
 	width: 200%;
 	height: 200%;
 	margin: 10px inline-block;
-	background: 
+	background: cornflowerblue;
 }
 
+/* boton envoye suivant */
+.btn {
+	background: rgb(33, 33, 87);
+	margin: 10px 1px 5px 5px;
+	padding: 15px 20px;
+	display: inline-block;
+	font-size: 20px;
+	background-color: rgb(168, 0, 8);
+	color: rgb(204, 179, 179);
+	text-decoration: none;
+	border-radius: 30px;
+}
+/* boton retorne page*/
+.returne {
+	background: rgb(33, 33, 87);
+	margin: 10px 1px 5px 5px;
+	padding: 15px 20px;
+	display: inline-block;
+	font-size: 20px;
+	background-color: rgb(0, 168, 28);
+	color: rgb(204, 179, 179);
+	text-decoration: none;
+	border-radius: 30px;
+}
+
+.btn:hover {
+	opacity: 0.8;
+}
+
+/* formuler*/
+div {
+	margin: 20;
+}
+.champ-formulaire {
+	margin: 20px 10px 5px 8px;
+	padding: 50px 50px;
+	display: inline-block;
+	padding: auto;
+	text-decoration: none;
+	font-size: 20px;
+	background-color: rgb(54, 56, 59);
+	color: rgb(204, 179, 179);
+	text-decoration: none;
+}
