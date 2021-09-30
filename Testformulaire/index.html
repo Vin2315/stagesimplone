@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+ 	<title>Formulaire</title>
+	<link rel="stylesheet" href="https://necolas.github.io/normalize.css/8.0.1/normalize.css">
+  	<link href="https://fonts.googleapis.com/css?family=Slabo+27px" rel="stylesheet"> 
+	<link rel="stylesheet" type="text/css" media="screen" href="css/style.css" />
+	<link rel="stylesheet" href="js/main.js">
+</head>
+
+</head>
+<body>
+
+	<main>
+		<h3>Évaluation de la production ecrite</h3>
+
+		<form action="" class="formulaire" id="formulaire" name="formulaire">
+		
+				
+				<!--Groupe Prenom-->
+				<div class="formulaire__groupe" id="grupe__prenom"> <!--agrupamos el texto la x y color  --> 
+					<label for="prenom" class="formulaire__label">Prénom</label>
+					<!--esta div es un imput con el icomo en el imput y se crea el div  --> 
+					<div class="faorlulaire__groupe">
+						<input type="text"class="formulaire__input" name="prenom" id="prenom" placeholder="Votre prénom">
+						<i class="fas fa-user"></i>
+						<i class="formulaire__validation fas fa-times"></i> <!--este muestra icono x-->
+					</div>		
+					<p class="formulaire__input-erreur"> Votre Prénom S'il vous plait </p><!--mensaje de error si no llena-->
+				</div>	
+
+
+				<!--Groupe Nom-->
+				<div class="formulaire__groupe" id="grupe__nom"> <!--agrupamos el texto la x y color  --> 
+					<label for="nom" class="formulaire__label"> Nom</label>
+					<!--esta div es un imput con el icomo en el imput y se crea el div  --> 
+					<div class="faorlulaire__groupe">
+						<input type="text"class="formulaire__input" name="nom" id="nom" placeholder="Votre Nom">
+						<i class="fas fa-user"></i>
+						<i class="formulaire__validation fas fa-times"></i> <!--este muestra icono x-->
+					</div>		
+					<p class="formulaire__input-erreur"> Votre Nom S'il vous plait </p><!--mensaje de error si no llena-->
+				</div>	
+
+				<!--Groupe Email-->
+				<div class="formulaire__groupe" id="grupe__email"> <!--agrupamos el texto la x y color  --> 
+					<label for="email" class="formulaire__label">Email - Courriel </label>
+					<!--esta div es un imput con el icomo en el imput y se crea el div  --> 
+					<div class="faorlulaire__groupe">
+						<input type="email"class="formulaire__input" name="email" id="nom" placeholder="Votre Email">
+						<i class="fas fa-envelope"></i>
+						<i class="formulaire__validation fas fa-times"></i> <!--este muestra icono x-->
+					</div>		
+					<p class="formulaire__input-erreur"> Votre email peut contenir des lettres, des points, des traits d'union, des chiffres.</p><!--mensaje de error si no llena-->
+				</div>	
+
+
+				<!--Numéro de téléphone-->
+				<div class="formulaire__groupe" id="grupe__tel"> <!--agrupamos el texto la x y color  --> 
+					<label for="tel" class="formulaire__label">Numéro de téléphone</label>
+					<!--esta div es un imput con el icomo en el imput y se crea el div  --> 
+					<div class="faorlulaire__groupe">
+						<input type="text"class="formulaire__input" name="tel" id="tel" placeholder="Numéro de téléphone">
+						<i class="fas fa-phone-square-alt"></i>
+						<i class="formulaire__validation fas fa-times"></i> <!--este muestra icono x-->
+					</div>		
+					<p class="formulaire__input-erreur"> S'il vous plait votre numéro de téléphone doit avoir un maximum de 10 chiffres </p> <!--mensaje de error si no llena-->
+				</div>
+
+				
+				<!--Rédaction -->
+				<div class="formulaire__groupe" id="grupe__redaction"> <!--agrupamos el texto la x y color  --> 
+					<label for="redaction" class="formulaire__label">Rédaction</label>
+					<!--esta div es un imput con el icomo en el imput y se crea el div  --> 
+					<div class="faorlulaire__groupe">
+						<textarea type="text"class="formulaire__input"  name="redaction" rows="5" id="redaction" placeholder="Votre message (de 45 à 60 mots)"></textarea>
+						<i class="fas fa-ad"></i>
+						<i class="formulaire__validation fas fa-times"></i> <!--este muestra icono x-->
+					</div>		
+					<p class="formulaire__input-erreur"> Votre écriture doit avoir un minimum de 45 caractères </p> <!--mensaje de error si no llena-->
+				</div>
+
+
+				<!-- groupe: Conditions Générales -->
+				<div class="formulaire__groupe" id="groupe__conditions">
+					<label class="formulaire__label">
+						<input class="formulaire__checkbox" type="checkbox" name="conditions" id="conditions"><!--caja acepta condiciones-->
+						J'ai lu et j'accepte les: Conditions générales 
+						de vente et la politique de confidentialité
+					</label>
+				</div>
+		
+				<div class="formulaire__message" id="formulaire__message">
+					<p><i class="fas fa-exclamation-triangle"></i> <b>Alerte:</b> S'il vous plait veuillez remplir le formulaire correctement merci..! </p>
+				</div>
+				
+				<div class="formulaire__groupe formulaire__groupe-btn-envoyer">
+						<button type="submit" class="formulaire__btn">Envoyer</button>
+						<p class="formulaire__message reussi" id="formulaire__message reussi">Formulaire envoyer envoyé avec succès !</p><!--sensaje de envio exitoso -->
+				</div>
+			</form>
+
+
+			
+		
+	</div>
+
+	
+	</main>
+
+	<script src="js/main.js"></script>
+	<script src="https://kit.fontawesome.com/2c36e9b7b1.js" crossorigin="anonymous"></script>
+
+</body>
+</html>

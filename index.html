@@ -9,7 +9,7 @@
 	<link rel="shortcut icon" type="img/favicon.ico" href="/assets/img/favicon2.ico">
 	<link rel="stylesheet" type="text/css" media="screen" href="css/global.css" />
 	<link rel="stylesheet" type="text/css" media="screen" href="css/form.css" />
-	<script src="js/main.js" async></script>
+	<script src="/js/main.js" async></script>
 </head>
 
 <body>
@@ -368,20 +368,20 @@
 				<img src="assets/img/nice.png" alt="" />
 				<br><br><br>
 
+			<form action="" class="formulaire " id="formulaire">
 				<div class="evaluation">
 					<h3>Évaluation de la production ecrite</h3>
 
 					<div id="formulaire-production-ecrite">
+								
+						<div class="champ-formulaire" >
+							<label>Nom</label>
+							<input type="text" name="nom" placeholder="Votre nom de famille" />
+						</div>
 						<div class="champ-formulaire">
 							<label>Prenom</label>
 							<input type="text" name="prenom" placeholder="Votre prénom" />
 						</div>
-
-						<div class="champ-formulaire">
-							<label>Nom</label>
-							<input type="text" name="nom" placeholder="Votre nom de famille" />
-						</div>
-
 						<div class="champ-formulaire">
 							<label>Numéro de téléphone</label>
 							<input type="tel" name="tel" placeholder="Votre telephone" />
@@ -403,8 +403,11 @@
 						<input type="submit" name="submit" value="envoyer" />
 					</div>
 				</div>
+			</form>
 		</article>
+		<script src="js/main.js"></script>
 	</form>
-</body>
+	
+	</body>
 
 </html>
