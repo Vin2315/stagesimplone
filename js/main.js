@@ -1,19 +1,39 @@
 const formulaire = document.getElementById('test'); //accede al formulario
 
 const input = document.getElementById("q1-r1");
-const error = document.getElementsByTagName('input'); 
-const form = document.getElementById('id-de-ton-formulaire');  form.addEventListener('submit', validerFunction);
+const error = document.getElementsByTagName('input');
+const form = document.getElementById('id-de-ton-formulaire'); form.addEventListener('submit', validerFunction);
 
+function recupererReponse(id) {
+	// On recupere le bloc qui contient toutes les inputs de la question 1
+	const element = document.getElementById(id);
+
+	// On recupere la liste des inputs dans cette question
+	const inputElementcollection = element.getElementsByTagName('input');
+
+	// On transforme le HTMLCollection en un array d'elements
+	const inputElementArray = Object.values(inputElementcollection);
+
+	// On trouve l'input avec un status 'checked' => https://www.w3schools.com/jsref/jsref_find.asp
+	const checkedInput = inputElementArray.find(inputElement => inputElement.checked);
+
+	// Retourne la valeur de l'input checké, et sinon null
+	if (checkedInput) {
+		return checkedInput.value;
+	} else {
+		return null;
+	}
+}
 
 function reponseformulaire() {
-  
-  overall.addEventListener('click', function () {
+
+	overall.addEventListener('click', function () {
 		e.preventDefault();
-  });
-  for (var i = 0; i < radio.length; i++) {
+	});
+	for (var i = 0; i < radio.length; i++) {
 		question[i].addEventListener('click', updateDisplay);
-  }
-  function updateDisplay() {
+	}
+	function updateDisplay() {
 		var checkedCount = 1;
 		for (var i = 0; i < question; i++) {
 			if (question[i].checked) {
@@ -30,15 +50,14 @@ function reponseformulaire() {
 			overall.checked = false;
 			overall.indeterminate = true;
 		}
-  }
-  
+	}
+
 }
 
 
 // remplace 
-function replacer(str, p1, p2, offset, s)
-{
-  return str + " - " + p1 + " , " + p2;
+function replacer(str, p1, p2, offset, s) {
+	return str + " - " + p1 + " , " + p2;
 }
 var newString = "XXzzzz".replace(/(X*)(z*)/, replacer);
 console.log(newString); // XXzzzz - XX , zzzz
@@ -46,9 +65,8 @@ console.log(newString); // XXzzzz - XX , zzzz
 
 
 
-function replacer(au, en, àla, à)
-{
-  return str + " - " + p1 + " , " + p2;
+function replacer(au, en, àla, à) {
+	return str + " - " + p1 + " , " + p2;
 }
 var newString = "XXzzzz".replace(/(X*)(z*)/, replacer);
 console.log(newString); // XXzzzz - XX , zzzz
