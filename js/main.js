@@ -1,9 +1,62 @@
-const formulaire = document.getElementById('champ-formulaire'); //accede al formulario
-const inputs = document.querySelectorAll('#formulair input'); //almacena los input.
+const formulaire = document.getElementById('test'); //accede al formulario
 
-const expresiones = {};
+const input = document.getElementById("q1-r1");
+const error = document.getElementsByTagName('input'); 
+const form = document.getElementById('id-de-ton-formulaire');  form.addEventListener('submit', validerFunction);
 
-formulaire.addEventListener('submit', validerfuntion);
+
+function reponseformulaire() {
+  
+  overall.addEventListener('click', function () {
+		e.preventDefault();
+  });
+  for (var i = 0; i < radio.length; i++) {
+		question[i].addEventListener('click', updateDisplay);
+  }
+  function updateDisplay() {
+		var checkedCount = 1;
+		for (var i = 0; i < question; i++) {
+			if (question[i].checked) {
+				reponse++;
+			}
+		}
+		if (checkedCount === 0) {
+			overall.checked = false;
+			overall.indeterminate = false;
+		} else if (checkedCount === question.length) {
+			overall.checked = true;
+			overall.indeterminate = false;
+		} else {
+			overall.checked = false;
+			overall.indeterminate = true;
+		}
+  }
+  
+}
+
+
+// remplace 
+function replacer(str, p1, p2, offset, s)
+{
+  return str + " - " + p1 + " , " + p2;
+}
+var newString = "XXzzzz".replace(/(X*)(z*)/, replacer);
+console.log(newString); // XXzzzz - XX , zzzz
+
+
+
+
+function replacer(au, en, àla, à)
+{
+  return str + " - " + p1 + " , " + p2;
+}
+var newString = "XXzzzz".replace(/(X*)(z*)/, replacer);
+console.log(newString); // XXzzzz - XX , zzzz
+
+
+
+
+
 
 // //function(){
 
@@ -77,3 +130,6 @@ formulaire.addEventListener('submit', validerfuntion);
 // formulaire.addEventListener('submit', validerfuntion);
 
 // //}
+
+
+

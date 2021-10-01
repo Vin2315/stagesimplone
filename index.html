@@ -51,15 +51,15 @@
 
 	</article>
 
-	<form action="traitement.php" method="POST">
+	<form action="traitement.php" method="POST" id=test>
 
 
 		<!-- Questions -->
 		<article id="written-understanding-card">
-			<h2>Compréhension écrite</h2>
+			<h2> 1.- Compréhension écrite</h2>
 
-			<section class="question-card">
-				<h3>Sélectionnez l’infirmier..</h3>
+			<section class="question-card" id="question_1">
+				<h3> Sélectionnez l’infirmier..</h3>
 
 				<div class="img-answer-block">
 					<div class="img-answer">
@@ -81,16 +81,17 @@
 						<input type="radio" name="question1" value="Image4" id="q1-r4">
 						<label for="q1-r4 "><img src="assets/img/imga (4).jpg" alt="" /></label>
 					</div>
-
+						preponce "q1-r1"; 
 				</div>
+				
 			</section>
 
-			<section class="question-card">
+			<section class="question-card" id="question_2">
 				<div class="question2__img">
 				</div>
 				<div class="item__body">
 					<h3>
-						De quelle couleur est cette image ?
+					 De quelle couleur est cette image ?
 					</h3>
 					<input type="radio" name="question2" value="Jaune" id="q2-r1">
 					<label for="q2-r1">Jaune</label>
@@ -106,8 +107,8 @@
 		</article>
 
 		<article id="card-communication">
-			<h2>Communication</h2>
-			<section class="question-card">
+			<h2> 2.- Communication</h2>
+			<section class="question-card" id="question_3">
 
 				<h3>Sélectionnez l’image correspondante à l'audio.</h3>
 
@@ -143,7 +144,7 @@
 				</div>
 			</section>
 
-			<section class="question-card">
+			<section class="question-card" id="question_4">
 				<h3>Sélectionnez l’image correspondante à l'audio.</h3>
 
 				<div class="item__body">
@@ -179,9 +180,9 @@
 
 
 		<article id="grammar-questions-card">
-			<h2>Grammaire</h2>
+			<h2> 3.- Grammaire</h2>
 
-			<section class="texte-a-trou question-card">
+			<section class="texte-a-trou question-card" id="question_5">
 				<h4>Marie habite en France, …………… Paris</h4>
 
 				<div class="answer-block">
@@ -196,7 +197,7 @@
 				</div>
 			</section>
 
-			<section class="texte-a-trou question-card">
+			<section class="texte-a-trou question-card" id="question_6">
 				<h4>Amina ...................... le fromage avec du pain.</h4>
 
 				<div class="answer-block">
@@ -211,7 +212,7 @@
 				</div>
 			</section>
 
-			<section class="texte-a-trou question-card">
+			<section class="texte-a-trou question-card" id="question_7">
 				<h4>Carla et Nicolas ...................... mariés.</h4>
 
 				<div class="answer-block">
@@ -226,7 +227,7 @@
 				</div>
 			</section>
 
-			<section class="texte-a-trou question-card">
+			<section class="texte-a-trou question-card" id="question_8">
 				<h4>Sophie va acheter un pull …………… .</h4>
 
 				<div class="answer-block">
@@ -241,7 +242,7 @@
 				</div>
 			</section>
 
-			<section class="texte-a-trou question-card">
+			<section class="texte-a-trou question-card" id="question_9">
 				<h4>Sélectionnez la phrase correcte.</h4>
 
 				<div class="answer-block">
@@ -260,7 +261,7 @@
 				</div>
 			</section>
 
-			<section class="texte-a-trou question-card">
+			<section class="texte-a-trou question-card" id="question_10">
 				<h4>Les chaises sont ……………</h4>
 				<img src="assets/img/imga (54).jpg" alt="" />
 				<div class="answer-block">
@@ -277,8 +278,8 @@
 		</article>
 
 		<article id="lexical-questions-card">
-			<h2>Lexique</h2>
-			<section class="question-card">
+			<h2>4.- Lexique</h2>
+			<section class="question-card" id="question_11">
 				<h3>Je mange du poulet tous les mercredis..</h3>
 
 				<div class="img-answer-block">
@@ -305,7 +306,7 @@
 				</div>
 			</section>
 
-			<section class="question-card">
+			<section class="question-card" id="question_12">
 				<img src="assets/img/imga (9).png" alt="" />
 				<div class="item__body">
 					<h3>Sélectionnez le mot correct. </h3>
@@ -320,7 +321,7 @@
 
 				</div>
 			</section>
-			<section class="texte-a-trou question-card">
+			<section class="texte-a-trou question-card" id="question_13">
 				<h4>Tous les matins, Sakura et Maurice .............. à 7h30.</h4>
 
 				<div class="answer-block">
@@ -336,7 +337,7 @@
 			</section>
 
 
-			<section class="texte-a-trou question-card">
+			<section class="texte-a-trou question-card" id="question_14">
 				<h4>Sélectionnez la phrase correcte.</h4>
 
 				<div class="answer-block">
@@ -354,9 +355,9 @@
 		</article>
 
 		<article id="written-essay-questions-card">
-			<h2>Production écrite (optionnel)</h2>
+			<h2> 5.- Production écrite (optionnel)</h2>
 
-			<section class="question-card">
+			<section class="question-card" id="question_15">
 				<p>Un(e) ami(e) arrive aujourd’hui à 14h à la gare. Vous lui envoyez un mail pour lui indiquer
 					l’itinéraire de l’hôtel. Utilisez la carte. Vous lui proposez un rendez-vous le soir. Précisez :
 				</p>
@@ -404,6 +405,7 @@
 					</div>
 				</div>
 			</form>
+		</section>
 		</article>
 		<script src="js/main.js"></script>
 	</form>
