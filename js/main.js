@@ -15,9 +15,33 @@ function recupererReponse(id) {
 	const inputElementArray = Object.values(inputElementcollection);
 
 	// On trouve l'input avec un status 'checked' => https://www.w3schools.com/jsref/jsref_find.asp
-	const checkedInput = inputElementArray.find(inputElement => inputElement.checked);
+	const checkedInput = inputElementArray.find(inputElement => inputElement.checked === true); 
 
 	// Retourne la valeur de l'input checké, et sinon null
+	if (checkedInput) { 
+		return checkedInput.value;
+	} else {
+		return null;
+	}
+}
+
+
+function recupererReponsesFormulaire() {
+	
+	const reponses = {}; 
+	reponses.question1 = recupererReponse("question_1"); 
+	return reponses; 
+
+}
+
+
+function recupererReponse(id) {
+	const element = document.getElementById(id);
+	const inputElementcollection = element.getElementsByTagName('input');
+	const inputElementArray = Object.values(inputElementcollection);
+	const checkedInput = inputElementArray.find(
+		(inputElement) => inputElement.checked,
+	);
 	if (checkedInput) {
 		return checkedInput.value;
 	} else {
@@ -25,8 +49,22 @@ function recupererReponse(id) {
 	}
 }
 
-function reponseformulaire() {
+function recupererReponse(id) {
+	const element = document.getElementById(id);
+	const inputElementcollection = element.getElementsByTagName('input');
+	const inputElementArray = Object.values(inputElementcollection);
+	const checkedInput = inputElementArray.find(
+		(inputElement) => inputElement.checked,
+	);
+	if (checkedInput) {
+		return checkedInput.value;
+	} else {
+		return null;
+	}
+}
 
+
+function reponseformulaire() {
 	overall.addEventListener('click', function () {
 		e.preventDefault();
 	});
