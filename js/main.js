@@ -1,7 +1,4 @@
-const formulaire = document.getElementById('formulaire_test'); //accede al formulario
 
-const input = document.getElementById('q1-r1');
-const error = document.getElementsByTagName('input');
 
 function recupererReponse(id) {
 	// On recupere le bloc qui contient toutes les inputs de la question 1
@@ -32,34 +29,6 @@ function recupererReponsesFormulaire() {
 		reponses['question_' + index] = recupererReponse('question_' + index);
 	}
 	return reponses;
-}
-
-function recupererReponse(id) {
-	const element = document.getElementById(id);
-	const inputElementcollection = element.getElementsByTagName('input');
-	const inputElementArray = Object.values(inputElementcollection);
-	const checkedInput = inputElementArray.find(
-		(inputElement) => inputElement.checked,
-	);
-	if (checkedInput) {
-		return checkedInput.value;
-	} else {
-		return null;
-	}
-}
-
-function recupererReponse(id) {
-	const element = document.getElementById(id);
-	const inputElementcollection = element.getElementsByTagName('input');
-	const inputElementArray = Object.values(inputElementcollection);
-	const checkedInput = inputElementArray.find(
-		(inputElement) => inputElement.checked,
-	);
-	if (checkedInput) {
-		return checkedInput.value;
-	} else {
-		return null;
-	}
 }
 
 function reponseformulaire() {
@@ -93,21 +62,32 @@ function reponseformulaire() {
 function replacer(str, p1, p2, offset, s) {
 	return str + ' - ' + p1 + ' , ' + p2;
 }
-var newString = 'XXzzzz'.replace(/(X*)(z*)/, replacer);
-console.log(newString); // XXzzzz - XX , zzzz
-
 function replacer(au, en, àla, à) {
 	return str + ' - ' + p1 + ' , ' + p2;
 }
-var newString = 'XXzzzz'.replace(/(X*)(z*)/, replacer);
-console.log(newString); // XXzzzz - XX , zzzz
 
 function onSubmit(event) {
 	event.preventDefault();
 	const resultat = recupererReponsesFormulaire();
 	console.log(resultat);
 }
-formulaire.addEventListener('submit', onSubmit);
+
+function init() {
+	const formulaire = document.getElementById('formulaire_test'); //accede al formulario
+
+	const input = document.getElementById('q1-r1');
+	const error = document.getElementsByTagName('input');
+
+	formulaire.addEventListener('submit', onSubmit);
+}
+
+// Demarrage de l'app
+init();
+
+
+
+
+
 
 // //function(){
 
