@@ -9,7 +9,7 @@
 	<link rel="shortcut icon" type="img/favicon.ico" href="/assets/img/favicon2.ico">
 	<link rel="stylesheet" type="text/css" media="screen" href="css/global.css" />
 	<link rel="stylesheet" type="text/css" media="screen" href="css/form.css" />
-	<script src="/js/main.js" async></script>
+	<script src="js/main.js" defer></script>
 </head>
 
 <body>
@@ -51,7 +51,7 @@
 
 	</article>
 
-	<form action="traitement.php" method="POST" id=test>
+	<form  id="formulaire_test">
 
 
 		<!-- Questions -->
@@ -370,7 +370,7 @@
 				<img src="assets/img/nice.png" alt="" />
 				<br><br><br>
 
-				<form action="" class="formulaire " id="formulaire">
+				
 					<div class="evaluation">
 						<h3>Évaluation de la production ecrite</h3>
 
@@ -402,10 +402,10 @@
 						</div>
 
 						<div>
-							<input type="submit" name="submit" value="envoyer" />
+							<button type="submit"> Envoyer </button>
 						</div>
 					</div>
-				</form>
+	
 			</section>
 		</article>
 		<script src="js/main.js"></script>
