@@ -1,153 +1,456 @@
-body,
-html {
+* {
 	margin: 0;
 	padding: 0;
-	min-height: 100%;
-	overflow-x: hidden;
-	font-size: 20px;
+	box-sizing: border-box;
 }
 
 body {
-	font-family: sans-serif;
-	padding: 20px;
-	background: linear-gradient(40deg, #98c26775, #f3e946) center center
-		no-repeat;
-	line-height: 1;
+	font-family: 'Lora', sans-serif;  /* Tipo de letra a usar en todo la hoja  */
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	color: #1d273b;  /* color de titulos   */
+	font-weight: 300;
+}
+
+h2 {
+	font-size: 50px;
+	color: rgb(8, 0, 0);
+}
+
+h3,h4 {
+	font-size: 25px;
+	color: rgb(102, 88, 88);
+}
+
+
+.container {
+    width: 90%;
+    max-width: 1000px;
+    margin: auto; /* pone a todas las graficas en tamano grande para ello pongo img de 2000px   */
+    overflow: hidden;   /* pone las imagenes del porte de la pantalla pero eliminando img se maneja contenedor bien   */
+}
+
+.container1 {
+    width: 90%;
+    max-width: 1000px;
+    margin: auto; /* pone a todas las graficas en tamano grande para ello pongo img de 2000px   */
+    overflow: hidden; /*desbordamiento: oculto;*/
+    padding: 60px 0; /*Separa las secciones o bloques de la pw;*/
 }
 
 h1 {
-	color: red;
-	font-size: 40px;
-	border-width: 1px;
-	border-color: black;
-	border-style: solid;
-	border-radius: 30px;
-	padding: 10px;
-	margin: 0px;
-	font-size: 10rm;
+    font-size: 50px;
 }
 
-h4,
-h3 {
-	border-width: 1px;
-	padding: 10px;
-	margin: 0px;
-	text-align: center;
+/* Header */
+/*se pone al inicio para separar la barra con el resto
+del texto que segue y haya separacion del testo y barra  */
+header::before {
+    content: "";
+    display: block;
+    margin-bottom: 150px; /* SEPARA EL prime TEXTO DE MI BARR*/
 }
 
-article:hover {
-	transform: translate3d(0, -10px, 0);
-	border: 1px rgb(255, 17, 0);
+
+nav{
+    width: 100%; /* largo barra*/
+    height: 80px;  /* ALTURA DE LA BARRA*/
+    background: rgba(27, 27, 27, 0.932); /* color barra */
+    border-bottom: 1px solid transparent; /* borde o contorno mi  BARRA no se buebe barra*/
+    box-shadow: 1px 1px 10px 0 rgba(218, 71, 71, 0.2); /* borde o contorno mi aliniado no se muebe  BARRA*/
+    position: fixed; /*MI BARRA SE QUEDA FIJA SUPERIORMENTE*/
+    top: 0;    /* PONE A LA BARRA EN AL INICIO DE LA PAGINA */ 
+    z-index: 100;
+    transition: ease-in-out 0.6s; 
 }
 
-img-answer-block {
-	display: flex;
-	flex-direction: row;
-	justify-content: space-around;
-	align-items: center;
-	align-content: center;
-	font-size: 0px;
+.nav {
+    display: flex;
+    justify-content:space-between;/*  justificar-contenido: espacio-entre;*/
+    height: 80px;
+    width: 100%;
+    align-items:center; /* listo lapara centarr las letras POSICIONAR MI MENU*/
+    padding: 0 40px;
 }
 
-.item_image {
-	display: flex;
-	flex-direction: row;
-	flex-wrap: nowrap;
-	justify-content: space-around;
-	align-items: stretch;
+.nav .log {
+    height: 50px; /* CAMBIA LA ALTURA DE MI LOGO*/
 }
 
-img#main-img {
-	width: 100%;
-	height: auto;
-	box-shadow: 0px 1px 10px 1px grey;
-	filter: blur(0px);
-	transition: filter 0.4s;
+/* mi logo se adapta a mi barra usqndo lqs 3 opciones */
+
+.nav .log img {
+    height: 100%;
+    vertical-align:auto;
 }
 
-img#main-img:hover {
-	transition: filter 0.4s;
+.debut-header {
+    font-weight: 300;
+    transition: ease-in-out 0.6s;
 }
 
-#language-choice {
-	display: flex;
-	justify-content: space-around;
-	margin: 15px;
-	width: 50%;
+.nav .debut-header a {
+    color: #f2f7f7;
+    text-decoration: none;
+    margin-left: 20px;  /* ESPACIO ENLAS LETRAS DE MENU*/
 }
 
-.nav-bg {
-	background-color: rgb(243, 238, 233);
+/* las 3 barritas en el menu  =*/
+
+.menu {
+
+    width: 80px;
+    height: 80px;
+    text-align: center;
+    z-index: 100;
+    cursor: pointer; /* el mais pasa por el menu*/
+    transition: color 0.7s ease-in;
+	
+    /*display: none; /*HACE QUE EL MENU DE 3 NINEAS DESAPARESCA*/
+    /*   
+    cursor: pointer;
+    */
 }
 
-.title {
-	font-size: 25px;
-	color: rgb(14, 12, 12);
-	font-weight: bold;
-	margin-bottom: 25px;
+
+.menu>i {
+    font-size: 20px;
+    line-height: 80px;
+	color: blanchedalmond;
 }
 
-.navegation-principal {
-	display: flex;
-	flex-direction: row;
-	justify-content: space-evenly;
+.container-header {
+    width: 100%;
+    height: 500px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
-@media (max-width: 768px) {
-	.navegacion-principal {
-		flex-direction: column; /* separa las menu en lina con opcion row */
-		justify-content: space-between; /* muebe contenido al horizontal; mi texto a la izquierda flex-start*/
-	}
-}
-.navegation-principal a:hover {
-	background-color: rgb(120, 129, 115);
-	color: var(--dark);
+.container-header >img {
+    width: 550px;
+    animation: ease-in animat 4s;
 }
 
-.item {
-	margin: 20px 20px;
-	background-color: #fff;
-	box-shadow: 0 15px 35px #3232321a, 0 5px 15px #0000001a;
-	transition: transform 0.3s;
-	transform: translate3d(0, -1px, 0);
+@keyframes animat {
+    0% {
+        transform: scale(0);
+    }
+
+    100% {
+        transform: scale(1);
+    }
 }
 
-.item:hover {
-	transform: translate3d(0, -10px, 0);
+.text-header {
+    margin: 0 0 0 40px;
 }
 
-.item img {
-	display: block;
+.container-header p {
+    font-weight: 100;
+    margin-top: 14px;
+    color: #5D6678;
+}
+
+/*contenido 1 boton*/
+.container-header a {
+    margin: 28px 0 0 0;
+    width: 130px;
+    display: inline-block;
+    background: #d61c1ca1;
+    text-align: center;
+    color: #fff;
+    padding: 12px 0;
+    text-decoration: none;
+    font-weight: 400;
+    text-transform: uppercase;
+    font-size: 14px; /*fondo */
+    border-radius: 5px; /*redondo */
+    box-shadow: 0 8px 32px rgba(112, 121, 117, 0.46);
+}
+
+.titre {
+    font-size: 50px;
+}
+
+/* About us */
+/**************************************parti 2 *****************************************/
+/* fonde de la pantalla*/
+.about-us {
+    background: #f2F2F2;
+}
+
+.container-article {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 40px;
+    justify-content: space-around; /*espacio entre articulo*/
+}
+
+.article {
+    width: 34%; /* reduce el ESPACIO DE LOS 2 EN UNA FILA O TRESarticulo   */
+    background: rgb(241, 228, 228);
+    margin-bottom: 30px;
+    border-radius: 10px;
+    padding: 85px 30px 60px 60px;
+    transition: 0.4s;
+}
+/* Da fondo al pasar el raton /* pasa raton y se activan cajas */
+.article:hover {
+    box-shadow: 0 8px 20px rgba(17, 29, 48, .26);
+    transition: color .5s;
+}
+/* entrega forma de los redondos*/
+.article>i {
+    font-size: 30px;
+    color: rgb(17, 16, 16);
+    background: #8fa1bd;
+    display: inline-block;
+    width: 70px;
+    height: 70px;
+    text-align: center;
+    padding-top: 20px;
+    border-radius: 50%; /* hace redondo al las figuras*/
+    box-shadow: 0 8px 32px rgba(20, 20, 20, 0.46);
+    cursor: pointer; /*  cursor: puntero*/
+	border-color: #141414;
+}
+/* textos del enunciado de la caja */
+.article>h3 {
+    font-size: 24px;
+    margin-top: 25px;
+}
+/* testo interno de las cajas  */
+.article>p {
+    font-weight: 100;
+    color: #000000;
+    margin-top: 10px;
+    padding-bottom: 20px;
+}
+/* texto articulo */
+.article>a {
+    color: #0957f5;
+    font-weight: 400;
+    text-decoration: none;
+}
+/* color a las caja de saber mas   */
+.article>a:hover {
+    color: #f80606;
+    transition: color .5s;
+}
+
+
+/*********************************parti 3 *******/
+.container1{
+    
+animation: ease-in animat 3s;
+    
+}
+
+/* fonde de la pantalla*/
+.questions  {
+    background: #6d8fd3;
+    padding-top: 20px;
+}
+
+.questions {
+    width: 100%; 
+    height: 600px;
+    display: flex;
+    justify-content:space-evenly;
+    align-items: center;
+ 	background: rgb(241, 228, 228);
+	padding-top: 90px;
+	margin: 10 0 0 40px;
+	
+}
+
+.questions>img {
+    width: 550px;
+}
+
+.text-questions {
+    margin: 0 0 0 20px;
+    animation: ease-in animat 2s;
+}
+
+.text-questions p {
+    font-weight: 80;
+  	margin-top: 5%;
+    color: #030303;
+}
+
+.text-questions a {
+
+    width: 130px;
+    display: inline-block;
+	background: #d61c1ca1;
+    
+    text-align: center;
+    color: #fff;
+    padding: 12px 0;
+    text-decoration: none;
+    font-weight: 400;
+    text-transform: uppercase;
+    font-size: 14px;
+    border-radius: 5px;
+    box-shadow: 0 8px 32px rgba(222, 37, 31, 0.46);
+	margin: 40 0 0 40px;
+    animation: ease-in animat 2s;
+}
+
+/* FOOTER */
+
+footer {
+    background: #020202;
+    padding: 0px 0;
+    overflow: hidden;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    margin: auto;
+}
+
+.partFooter {
+    margin-top: 90p;
 	width: 20%;
-	height: 20%;
-	margin: 10px inline-block;
+	  
+    
 }
 
-.item__body {
-	padding: 25px;
+.partFooter h4 {
+    color: #fdfdff;
+    font-size: 20px;
+    font-weight: 400;
+    margin-bottom: 30px;
 }
 
-.item__title {
-	font-size: 14px;
-	margin-bottom: 3%;
-	font-weight: bold;
-	color: #232323;
+.partFooter a {
+    display: block;
+    text-decoration: none;
+    color: #fff9f9;
+    font-weight: 300;
+    transition: color .5s ease-in-out;
+    margin-bottom: 20px;
 }
 
-.item__description {
-	color: #585858;
+
+.partFooter a:hover {
+    color: #de251f;
 }
 
-.item_inicio {
-	display: block;
-	width: 200%;
-	height: 200%;
-	margin: 10px inline-block;
-	background: cornflowerblue;
+.partFooter img {
+    width: 40%;
+    margin-left: 80px;
 }
+
+.social-media i {
+    font-size: 20px;
+    display: inline-block;
+    color: #f1ebeb;
+    border: 1px solid #fc0505;
+    border-radius: 50%;
+    width: 38px;
+    height: 38px;
+    line-height: 36px;
+    cursor: pointer;
+    margin-top: 20px;
+    text-align: center;
+    transition: all ease-in-out .5s;
+    margin-right: 7px;
+}
+
+.social-media i:hover {
+    color: #fff;
+    background-color: #1d1d22;
+    border-color: #030303;
+}
+
+/**************************Breakpoints responsive************** */    
+
+@media screen and (max-width:800px) {
+    .titre {
+        font-size: 45px;
+    }
+
+    .container-header {
+        flex-direction: column;
+        justify-content: space-evenly;
+        height: 720px;
+    }
+
+    .container-header>img {
+        width: 400px;
+    }
+
+    .text-header {
+        margin: 0;
+    }
+
+    /* About us parte dos con mis ' tableros de fondo  */
+
+    .article {
+        width: 45%;
+    }
+
+    /* Questions PREGUNTAS DE CADA */
+
+    .questions {
+        height: 620px;
+        justify-content: space-evenly;
+        flex-direction: column;
+}
+
+
+    /* Footer */
+
+    footer {
+        justify-content: space-evenly;
+    }
+
+    .partFooter {
+        width: 40%;
+        margin-bottom: 40px;
+    }
+
+@media screen and (max-width:600px) {
+    .titre {
+        font-size: 35px;
+    }
+
+    h1 {
+       font-size: 40px;
+}
+/*escondo menu*/
+.debut-header{
+    position:fixed ;
+}
+/*aparesca mis barritas de menu*/
+.menu{
+    display: block;
+}
+
+/*PARA QUE SALGAN UNA CAJA DEBAJO DE LA OTRA 4 CAJAS responsi celu*/
+.article{
+
+    width: 95%;
+}
+/*img ultima sea mas pequena*/
+.questions>img{
+    width: 80%;
+}
+
+
+/*_______________________________________________________PAGE 2 __________________________________*/
 
 /* boton envoye suivant */
-.btn {
+.page-control {
 	background: rgb(33, 33, 87);
 	margin: 10px 1px 5px 5px;
 	padding: 15px 20px;
@@ -175,11 +478,11 @@ img#main-img:hover {
 	opacity: 0.8;
 }
 
-#formulaire-production-ecrite {
+/* #formulaire-production-ecrite {
 	display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
 }
 
 .champ-formulaire {
@@ -197,4 +500,5 @@ img#main-img:hover {
 
 .champ-formulaire label {
 	margin-bottom: 10px;
-}
+} */
+
