@@ -273,7 +273,7 @@ nav {
 
 /*********************************parti 3 *******/
 .container1 {
-  animation: ease-in animat 3s;
+  /* animation: ease-in animat 3s; */
 }
 
 /* fonde de la pantalla*/
@@ -424,7 +424,7 @@ footer {
     justify-content: space-evenly;
     flex-direction: column;
   }
-}
+
 
 /* Footer */
 
