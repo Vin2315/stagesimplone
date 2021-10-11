@@ -84,7 +84,7 @@ function init() {
 	const input = document.getElementById('q1-r1');
 	const error = document.getElementsByTagName('input');
 
-	formulaire.addEventListener('submit', onSubmit); 
+	formulaire.addEventListener('submit', onSubmit);
 
 }
 
