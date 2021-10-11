@@ -1,22 +1,3 @@
-// Nav barra por  se deplace//
-let emplacementPrincipal = window.pageYOffset; //0
-
-//funtion pour mi nav-bar/
-window.addEventListener('scroll', function () {
-	let deplacementActuel = window.pageYOffset; //180
-	if (emplacementPrincipal >= deplacementActuel) {
-		//200 > 180
-		document.getElementsByTagName('nav')[0].style.top = '0px';
-	} else {
-		document.getElementsByTagName('nav')[0].style.top = '-100px';
-	}
-	emplacementPrincipal = deplacementActuel; //200
-});
-
-//para animaciones scroll AOS //
-AOS.init();
-
-
 
 
 function recupererReponse(id) {
@@ -97,18 +78,18 @@ function onSubmit(event) {
 	}
 }
 
-
-
 function init() {
-
-	
 	const formulaire = document.getElementById('formulaire_test'); //accede al formulario
 
 	const input = document.getElementById('q1-r1');
 	const error = document.getElementsByTagName('input');
 
-	formulaire.addEventListener('submit', onSubmit);
+	formulaire.addEventListener('submit', onSubmit); 
+
 }
+
+
+
 
 
 function validerFormulaire() {

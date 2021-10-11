@@ -68,9 +68,6 @@ nav{
     top: 0;    /* PONE A LA BARRA EN AL INICIO DE LA PAGINA */ 
     z-index: 100;
     transition: ease-in-out 0.6s; 
-}
-
-.nav {
     display: flex;
     justify-content:space-between;/*  justificar-contenido: espacio-entre;*/
     height: 80px;
@@ -79,23 +76,54 @@ nav{
     padding: 0 40px;
 }
 
-.nav .log {
+#logo {
     height: 50px; /* CAMBIA LA ALTURA DE MI LOGO*/
+
 }
 
-/* mi logo se adapta a mi barra usqndo lqs 3 opciones */
+#nav-hamburger{
 
-.nav .log img {
-    height: 100%;
-    vertical-align:auto;
+    display: none;
 }
+
+@media screen and (max-width:800px){
+
+    #nav-hamburger{
+
+        display: block;
+    }
+
+.debut-header.visible { 
+
+    display: flex;
+    flex-direction: column;
+    top: 0;
+    margin-top: 80px;
+    background-color: #2a2a2a;
+    width: 100%;
+    left: 0px;
+
+}
+
+.debut-header{
+    display: none; 
+}
+
+
+
+
+}
+
+
+
+
 
 .debut-header {
     font-weight: 300;
     transition: ease-in-out 0.6s;
 }
 
-.nav .debut-header a {
+.debut-header a {
     color: #f2f7f7;
     text-decoration: none;
     margin-left: 20px;  /* ESPACIO ENLAS LETRAS DE MENU*/
