@@ -1,3 +1,22 @@
+// Nav barra por  se deplace//
+let emplacementPrincipal = window.pageYOffset; //0
+
+//funtion pour mi nav-bar/
+window.addEventListener('scroll', function () {
+	let deplacementActuel = window.pageYOffset; //180
+	if (emplacementPrincipal >= deplacementActuel) {
+		//200 > 180
+		document.getElementsByTagName('nav')[0].style.top = '0px';
+	} else {
+		document.getElementsByTagName('nav')[0].style.top = '-100px';
+	}
+	emplacementPrincipal = deplacementActuel; //200
+});
+
+//para animaciones scroll AOS //
+AOS.init();
+
+
 
 
 function recupererReponse(id) {
@@ -25,7 +44,7 @@ function recupererReponse(id) {
 
 function recupererReponsesFormulaire() {
 	const reponses = {};
-	for (let index = 1; index < 14; index++) {
+	for (let index = 1; index < 15; index++) {
 		reponses['question_' + index] = recupererReponse('question_' + index);
 	}
 	return reponses;
@@ -69,10 +88,20 @@ function replacer(au, en, àla, à) {
 function onSubmit(event) {
 	event.preventDefault();
 	const resultat = recupererReponsesFormulaire();
-	console.log(resultat);
+
+	const estValide = validerFormulaire();
+	if (estValide) {
+		console.log(resultat);
+	} else {
+		alert("Votre formulaire n'est pas valide");
+	}
 }
 
+
+
 function init() {
+
+	
 	const formulaire = document.getElementById('formulaire_test'); //accede al formulario
 
 	const input = document.getElementById('q1-r1');
@@ -81,13 +110,12 @@ function init() {
 	formulaire.addEventListener('submit', onSubmit);
 }
 
+
+function validerFormulaire() {
+	///tous les question son ok, metre en rouje les pas valide
+}
 // Demarrage de l'app
 init();
-
-
-
-
-
 
 // //function(){
 

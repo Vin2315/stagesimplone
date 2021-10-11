@@ -1,0 +1,201 @@
+
+/*______________________________________FORMULAIRE __________________________________*/
+body {
+	background: rgba(57, 111, 165, 0.76);
+	font-family: 'Times New Roman', Times, serif; /*tipo letra*/
+}
+
+
+
+* {
+	box-sizing: border-box; /*tamano caja borde*/
+}
+
+body {
+	background: rgba(57, 111, 165, 0.76);
+	font-family: 'Times New Roman', Times, serif; /*tipo letra*/
+}
+
+main {
+	max-width: 800px; /*ancho máximo centro pagina*/
+	width: 90%;
+	margin: auto; /*ayuda al max width a centrarce*/
+	padding: 30px; /*relleno del main lo hace gran o peque*/
+}
+
+h1{
+	color: #000000fd;
+	background: #faf8f8;
+    font-weight: 300;
+
+}
+.formulaire {
+	display: grid; /*pone pantalla cuadricula*/
+	grid-template-columns: 1fr 1fr; /*pone en 2 columnas*/
+	gap: 20px; /*espaciado o brecha entre los elementos filas columna */
+}
+.formulaire__label {
+	display: block; /*bloqueo pantalla */
+	font-weight: 700; /*para fuente negrita peso de la fuente*/
+	padding: 10px; /*rrelleno a todos los lados*/
+	cursor: pointer; /*para MANITO en las letras senala */
+}
+
+.formulaire__groupe-input {
+	/*grupo del imput que es unq div */
+	position:relative; /*posicion relativo y se ôsiciona el icono */
+}
+
+.formulaire__input {
+	width: 80%; /*tamano ancho de cajas*/
+	background: #fff; /*fondeo blanco*/
+	border: 3px solid transparent; /*color al dar click  este es trasparente*/
+	border-radius: 3px; /*tamano de cajas*/
+	height: 45px; /*haltura linea*/
+	line-height: 45px; /*haltura linea el texto este centrado */
+	padding: 10px 40px 10px 15px; /*tamano de cajas*/
+	transition: 0.3s ease all; /*tracicion en 3 segundos */
+}
+
+/* le pongo : focus esto es para que aparesca otro color */
+.formulaire__input:focus {
+	border: 3px solid #0a21f3; /*color del focus */
+	outline: none; /* quita el subrallado del navegador */
+	box-shadow: 3px 0px 30px rgba(163, 163, 163, 0.4); /*sombra de la senal que hago con el azul trasparencia 04*/
+}
+
+.formulaire__input-erreur {
+	/*trabaja con imput error*/
+	font-size: 12px; /*texto mas pequeno*/
+	margin-bottom: 0px; /*margen a bajo*/
+	display: none; /*desaparece el lavel */
+}
+
+.formulaire__input-erreur-activo {
+	display: block; /* indica o se muestra  */
+}
+
+.formulaire__validation {
+	position: absolute; /*posicionar absolutamente   */
+	right: 10px; /* de derecha a izquierda */
+	bottom: 15px; /* desplaza haci bajo des plas */
+	z-index: 100; /* arrriba otros elementos */
+	font-size: 16px; /*  */
+	opacity: 0; /* no se muestra esta ok solo cuando hay error  */
+}
+
+
+
+/*iconne*/
+.formulaire__icone {
+	position: absolute; /*posicionar absolutamente   */
+	left: 10px; /* de derecha a izquierda */
+	bottom: 15px; /* desplaza haci bajo des plas */
+	z-index: 100; /* arrriba otros elementos */
+	font-size: 16px; /*  */
+	opacity: 0; /* no se muestra esta ok solo cuando hay error  */
+}
+
+.formulaire__checkbox {
+	margin-right: 10px;
+}
+
+.formulaire__groupe-conditions,
+.formulaire__message,
+.formulaire__groupe-btn-envoyer {
+	/*grupo boton*/
+	grid-column: span 2; /*el elemento abarca dos espacios  */
+}
+
+.formulaire__message {
+	height: 45px;
+	line-height: 45px;
+	background: #f6606b;
+	padding: 0px 15px;
+	border-radius: 3px;
+	display: none; /*oculto el mensaje de alerta*/
+}
+
+.formulaire__message-activo {
+	/*muestro mensaje de alerta*/
+	display: block;
+}
+.formulaire__message p {
+	margin: 0px;
+}
+
+/* Boton de enviio  */
+.formulaire__groupe-btn-envoyer {
+	display: flex; /* texto pone a la derecha */
+	flex-direction: column; /* testo bajo el boton */
+	align-items: center; /* centrar los elementos */
+}
+
+.formulaire__btn {
+	height: 45px; /* haltura  */
+	line-height: 45px; /*halto de linea   */
+	width: 30%; /* ancho del espacio que abarca   */
+	background: #000; /* color fonde */
+	color: #fff; /*  color texto  */
+	font-weight: bold; /* para las negritas   */
+	border: none; /* quite el borde por defecto  */
+	border-radius: 3px; /* borde radio de " pixeles   */
+	cursor: pointer; /* para que se vea que se puede dar click */
+	transition: 0.1s ease all; /* tiempo  */
+}
+/* sombra sutil al boton */
+.formulaire__btn:hover {
+	box-shadow: 20px 0px 40px rgba(160, 163, 163, 5);
+}
+/* mensaje de exito*/
+.formulaire__message-reussi {
+	font-size: 14px; /* talla texto*/
+	color: #119200;
+	display: none; /* oculta el mensaje*/
+}
+
+.formulaire__message-reussi-activo {
+	display: block;
+}
+
+/* ----- -----  Estilos para Validacion ----- ----- */
+
+.formulaire__groupe-validation .formulaire__validation {
+	color: #1ed12d;
+	opacity: 1;
+}
+
+.formulaire__groupe- .formulaire__label {
+	color: #bb2929;
+	/* color: linear-gradient(white 5px, #bb2929 10px); */
+	/* color: linear-gradient(50deg, black, white); */
+}
+
+.formulaire__groupe-incorrecto .formulaire__validation {
+	color: #bb2929;
+	opacity: 1;
+}
+
+.formulaire__groupe-incorrecto .formulaire__input {
+	border: 3px solid #bb2929;
+}
+
+
+
+
+/* ----- -----  Mediaqueries ----- ----- */
+
+@media screen and (max-width: 800px) {
+  .formulaire {
+    grid-template-columns: 1fr;
+  }
+  
+.formulaire__groupe-conditions,
+.formulaire__message,
+.formulaire__groupe-btn-envoyer {
+    grid-column: 1;
+  }
+  .formulario__btn {
+    width: 100%;
+  }
+}
