@@ -1,5 +1,3 @@
-
-
 function recupererReponse(id) {
 	// On recupere le bloc qui contient toutes les inputs de la question 1
 	const element = document.getElementById(id);
@@ -86,7 +84,19 @@ function init() {
 
 	formulaire.addEventListener('submit', onSubmit);
 
+	const button = document.getElementById('button-commence-test');
+	button.addEventListener('click', (e) => goToCard(1));
 }
+
+function goToCard(numeroCard) {
+	const carrouselElement = document.getElementById('formulaire_test');
+	carrouselElement.style.transform = `translateX(-${numeroCard}00vw)`;
+}
+
+
+
+
+
 
 
 

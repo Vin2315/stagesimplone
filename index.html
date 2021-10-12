@@ -15,43 +15,47 @@
 
 <body>
 
-		
+
 	<form id="formulaire_test" class="carrousel">
-		
-		<article id="presentation-card" class="card-carrousel">
+
+		<section id="presentation-card" class="card-carrousel">
 			<h1>Test niveau A1</h1>
 			<h3>Bienvenue à Votre site de connaissances.</h3>
 			<img src="assets/img/img1.png" alt="maison" id="main-img" />
-	
+
 			<div id="button">
 				<div class="radio-button">
 					<input type="radio" name="language" value="Français" id="french">
 					<label for="french">Français</label>
 				</div>
-	
+
 				<div class="radio-button">
 					<input type="radio" name="language" value="English" id="english">
 					<label for="english">English</label>
 				</div>
-	
+
 			</div>
-	
+
 			<p>Lisez calmement les énoncés de votre exercice</p>
-	
+
 			<div id="page-control">
-				<a href="#" class="btn">ENVOYER <a>
+				<a href="#" class="btn">ENVOYER </a>
 			</div>
-	
+
 			<div id="page-control">
-				<a href="#" class="btn">SUIVANT" <a>
+
+				<button id="button-commence-test" type="button">
+					commencer
+				</button>
+
 			</div>
-	
+
 			<div id="page-control">
-				<a href="menu.html" class="returne" title="Menu">RETURNE MENU" <a>
+				<a href="menu.html" class="returne" title="Menu">RETURNE MENU </a>
 			</div>
-	
-	
-		</article>
+
+
+		</section>
 
 		<section class="question-card card-carrousel" id="question_1">
 			<h2> 1.- Compréhension écrite</h2>
@@ -279,7 +283,7 @@
 			</div>
 		</section>
 
-		
+
 		<section class="question-card card-carrousel" id="question_11">
 			<h2>4.- Lexique</h2>
 
@@ -361,9 +365,9 @@
 		</section>
 
 		<section class="question-card card-carrousel" id="question_15">
-		
+
 			<h2> 5.- Production écrite (optionnel)</h2>
-			
+
 			<p>Un(e) ami(e) arrive aujourd’hui à 14h à la gare. Vous lui envoyez un mail pour lui indiquer
 				l’itinéraire de l’hôtel. Utilisez la carte. Vous lui proposez un rendez-vous le soir. Précisez :
 			</p>
@@ -400,7 +404,6 @@
 
 		</section>
 
-		<script src="js/main.js"></script>
 	</form>
 
 </body>

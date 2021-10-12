@@ -1,3 +1,7 @@
+body {
+	overflow: hidden;
+}
+
 /*gra.1*/
 article#presentation-card {
 	display: flex;
@@ -56,16 +60,14 @@ article#presentation-card {
 
 /* CARROUSEL */
 
-
 .carrousel {
-
 	display: flex;
-
+	overflow: visible;
+	transition: transform 1s ease-in-out;
 }
 
 
 .card-carrousel {
-
-
-
+	min-width: 100vw;
+	height: 80vh;
 }
