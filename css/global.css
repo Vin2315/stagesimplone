@@ -159,9 +159,10 @@ nav {
   align-items: center;
 }
 
-.container-header > img {
+#hero-img {
   width: 550px;
-  animation: ease-in animat 4s;
+  margin: 10px;
+  animation: ease-in animat 0.4s;
 }
 
 @keyframes animat {
@@ -274,8 +275,7 @@ nav {
 /*********************************parti 3 *******/
 .container1 {
   /* animation: ease-in animat 3s; */
-padding: 0%;
-
+  padding: 0%;
 }
 
 /* fonde de la pantalla*/
@@ -395,6 +395,10 @@ footer {
 /**************************Breakpoints responsive************** */
 
 @media screen and (max-width: 800px) {
+  #hero-img {
+    width: 100%;
+  }
+
   .titre {
     font-size: 25px;
   }
@@ -403,10 +407,6 @@ footer {
     flex-direction: column;
     justify-content: space-evenly;
     height: 420px;
-  }
-
-  .container-header > img {
-    width: 40px;
   }
 
   .text-header {
@@ -427,16 +427,16 @@ footer {
     flex-direction: column;
   }
 
+  /* Footer */
 
-/* Footer */
+  footer {
+    justify-content: space-evenly;
+  }
 
-footer {
-  justify-content: space-evenly;
-}
-
-.partFooter {
-  width: 40%;
-  margin-bottom: 40px;
+  .partFooter {
+    width: 40%;
+    margin-bottom: 40px;
+  }
 }
 
 @media screen and (max-width: 600px) {
@@ -447,22 +447,21 @@ footer {
   h1 {
     font-size: 40px;
   }
-}
 
-/*aparesca mis barritas de menu*/
-.menu {
-  display: block;
-}
+  /*aparesca mis barritas de menu*/
+  .menu {
+    display: block;
+  }
 
-/*PARA QUE SALGAN UNA CAJA DEBAJO DE LA OTRA 4 CAJAS responsi celu*/
-.article {
-  width: 95%;
+  /*PARA QUE SALGAN UNA CAJA DEBAJO DE LA OTRA 4 CAJAS responsi celu*/
+  .article {
+    width: 95%;
+  }
+  /*img ultima sea mas pequena*/
+  .questions > img {
+    width: 80%;
+  }
 }
-/*img ultima sea mas pequena*/
-.questions > img {
-  width: 80%;
-}
-
 /*_______________________________________________________PAGE 2 __________________________________*/
 
 /* boton envoye suivant */
