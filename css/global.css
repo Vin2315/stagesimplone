@@ -54,7 +54,7 @@ del texto que segue y haya separacion del testo y barra  */
 header::before {
   content: "";
   display: block;
-  margin-bottom: 150px; /* SEPARA EL prime TEXTO DE MI BARR*/
+  margin-bottom: 120px; /* SEPARA EL prime TEXTO DE MI BARR*/
 }
 
 nav {
@@ -274,6 +274,8 @@ nav {
 /*********************************parti 3 *******/
 .container1 {
   /* animation: ease-in animat 3s; */
+padding: 0%;
+
 }
 
 /* fonde de la pantalla*/
@@ -394,17 +396,17 @@ footer {
 
 @media screen and (max-width: 800px) {
   .titre {
-    font-size: 45px;
+    font-size: 25px;
   }
 
   .container-header {
     flex-direction: column;
     justify-content: space-evenly;
-    height: 720px;
+    height: 420px;
   }
 
   .container-header > img {
-    width: 400px;
+    width: 40px;
   }
 
   .text-header {
@@ -420,7 +422,7 @@ footer {
   /* Questions PREGUNTAS DE CADA */
 
   .questions {
-    height: 620px;
+    height: 590px;
     justify-content: space-evenly;
     flex-direction: column;
   }
