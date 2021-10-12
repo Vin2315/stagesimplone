@@ -54,5 +54,18 @@ article#presentation-card {
 	filter: grayscale(0%);
 }
 
-/* titres */
+/* CARROUSEL */
 
+
+.carrousel {
+
+	display: flex;
+
+}
+
+
+.card-carrousel {
+
+
+
+}
