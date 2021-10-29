@@ -94,7 +94,7 @@ function initEventListeners() {
 
 	for (let index = 0; index < listeBoutonPrecedent.length; index++) {
 		const boutonPrecedent = listeBoutonPrecedent[index];
-		const boutonSuivant = listeBoutonPrecedent[index];
+		const boutonSuivant = listeBoutonSuivant[index];
 		boutonPrecedent.addEventListener('click', (e) => goToCard(index));
 		boutonSuivant.addEventListener('click', (e) => goToCard(index + 2));
 	}
