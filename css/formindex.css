@@ -1,0 +1,154 @@
+body {
+	overflow: hidden;
+}
+
+
+div {
+	margin: 20px 0;
+}
+
+/* boton retorne page*/
+.returne , .btn {
+	padding: 15px 20px;
+	display: inline-block;
+	font-size: 16px;
+	background-color: rgb(0, 168, 28);
+	color: rgb(10, 10, 10);
+	text-decoration: none;
+	border-radius: 15px;
+  margin:10px 10px ;
+}
+
+
+
+/*gra.1*/
+article#presentation-card {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	padding: 20px 50px;
+}
+/*gra.2*/
+.question-card {
+	padding: 20px;
+	border-radius: 10px;
+	margin: 40px;
+	margin: 20px 20px;
+	background-color: #fff;
+	box-shadow: 0 15px 35px #3232321a, 0 5px 15px #0000001a;
+	transition: transform 0.3s;
+	transform: translate3d(0, -1px, 0);
+}
+/*gra.2*/
+.img-answer-block {
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: space-evenly;
+	align-items: center;
+	width: auto;
+}
+/*otras imagenes primer grupo*/
+.item__body img-answer img {
+	box-shadow: 0px 3px 7px 1px #d0c8c8;
+	width: 400px; /*talla imagen  */
+	height: 162px;
+	margin: 10px;
+}
+.question2__img {
+	width: 25%;
+	height: 100px;
+	background-color: yellow;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.img-answer input {
+	display: none;
+}
+
+.img-answer input + label img {
+	transition: filter 0.4s;
+	filter: grayscale(80%);
+}
+
+.img-answer input:checked + label img {
+	transition: filter 0.4s;
+	filter: grayscale(0%);
+}
+
+/* CARROUSEL */
+
+.carrousel {
+	display: flex;
+	overflow: visible;
+	transition: transform 1s ease-in-out;
+}
+
+.card-carrousel {
+	min-width: 100vw;
+	height: 80vh;
+}
+
+.bouton {
+	height: 40px;
+	margin: 10px;
+	padding: 10px;
+	border: 2px solid black;
+	background: white;
+	border-radius: 10px;
+	cursor: pointer;
+}
+
+.bouton-groupe {
+	display: flex;
+	justify-content: center;
+}
+
+.button.bouton-suivant {
+	background: rgb(100, 204, 100);
+}
+
+.button.bouton-precedent {
+	border-color: grey;
+}
+
+
+
+/* #formulaire-production-ecrite {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.champ-formulaire {
+	margin: 20px 10px 5px 8px;
+	padding: 10px 20px;
+	width: 50%;
+	display: flex;
+	flex-direction: column;
+	text-decoration: none;
+	font-size: 20px;
+	background-color: rgb(54, 56, 59);
+	color: rgb(204, 179, 179);
+	text-decoration: none;
+}
+
+.champ-formulaire label {
+	margin-bottom: 10px;
+} */
+
+
+/* boton envoye suivant */
+.page-control {
+	background: rgb(33, 33, 87);
+	margin: 10px 1px 5px 5px;
+	padding: 15px 20px;
+	display: inline-block;
+	font-size: 20px;
+	background-color: rgb(168, 0, 8);
+	color: rgb(204, 179, 179);
+	text-decoration: none;
+	border-radius: 30px;
+}

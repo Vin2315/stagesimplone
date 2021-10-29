@@ -8,7 +8,7 @@
 	<title>Test de classement en français</title>
 	<link rel="shortcut icon" type="img/favicon.ico" href="/assets/img/logo9 (1).ico">
 	<link rel="stylesheet" type="text/css" media="screen" href="css/global.css" />
-	<link rel="stylesheet" type="text/css" media="screen" href="css/form.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="css/formindex.css" />
 	<script src="js/main.js" defer></script>
 
 </head>
@@ -25,12 +25,10 @@
 
 			<div id="button">
 				<div class="radio-button">
-					<input type="radio" name="language" value="Français" id="french">
+					<input type="radio" class= language name="language" value="Français" id="french">
 					<label for="french">Français</label>
-				</div>
-
-				<div class="radio-button">
-					<input type="radio" name="language" value="English" id="english">
+								
+					<input type="radio" class= language  name="language" value="English" id="english">
 					<label for="english">English</label>
 				</div>
 
@@ -39,21 +37,10 @@
 			<p>Lisez calmement les énoncés de votre exercice</p>
 
 			<div id="page-control">
-				<a href="#" class="btn">ENVOYER </a>
+				<a href="#" id="button-commence-test" class="btn ">Comence Test </a>
+			
+				<a href="menu.html"  title="Menu" class="returne">RETURNE MENU </a>
 			</div>
-
-			<div id="page-control">
-
-				<button id="button-commence-test" type="button">
-					commencer
-				</button>
-
-			</div>
-
-			<div id="page-control">
-				<a href="menu.html" class="returne" title="Menu">RETURNE MENU </a>
-			</div>
-
 
 		</section>
 
@@ -81,7 +68,12 @@
 					<input type="radio" name="question1" value="Image4" id="q1-r4">
 					<label for="q1-r4 "><img src="assets/img/imga (4).jpg" alt="" /></label>
 				</div>
-				reponse "q1-r1";
+
+				<div class="button-groupe">
+					<button type="button" class="button bouton-suivant">Suivant</button>
+					<button type="button" class="button bouton-precedent">Precedent</button>
+				</div>
+
 			</div>
 
 		</section>
@@ -103,6 +95,10 @@
 				<label for="q2-r3">Rouge</label>
 				<input type="radio" name="question2" value="Bleue " id="q2-r4">
 				<label for="q2-r4">Bleue </label>
+				<div class="button-groupe">
+					<button type="button" class="button bouton-suivant">Suivant</button>
+					<button type="button" class="button bouton-precedent">Precedent</button>
+				</div>
 
 			</div>
 		</section>
@@ -191,6 +187,10 @@
 				<label for="q5-r3">à la </label>
 				<input type="radio" name="question5" value="à " id="q5-r4">
 				<label for="q5-r4">à </label>
+				<div class="button-groupe">
+					<button type="button" class="button bouton-suivant">Suivant</button>
+					<button type="button" class="button bouton-precedent">Precedent</button>
+				</div>
 			</div>
 		</section>
 

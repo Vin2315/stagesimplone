@@ -77,30 +77,33 @@ function onSubmit(event) {
 }
 
 function init() {
+	initEventListeners();
+}
+
+function initEventListeners() {
 	const formulaire = document.getElementById('formulaire_test'); //accede al formulario
-
-	const input = document.getElementById('q1-r1');
-	const error = document.getElementsByTagName('input');
-
 	formulaire.addEventListener('submit', onSubmit);
 
 	const button = document.getElementById('button-commence-test');
 	button.addEventListener('click', (e) => goToCard(1));
+
+	const listeBoutonPrecedent =
+		document.getElementsByClassName('bouton-precedent');
+	const listeBoutonSuivant =
+		document.getElementsByClassName('bouton-suivant');
+
+	for (let index = 0; index < listeBoutonPrecedent.length; index++) {
+		const boutonPrecedent = listeBoutonPrecedent[index];
+		const boutonSuivant = listeBoutonPrecedent[index];
+		boutonPrecedent.addEventListener('click', (e) => goToCard(index));
+		boutonSuivant.addEventListener('click', (e) => goToCard(index + 2));
+	}
 }
 
 function goToCard(numeroCard) {
 	const carrouselElement = document.getElementById('formulaire_test');
 	carrouselElement.style.transform = `translateX(-${numeroCard}00vw)`;
 }
-
-
-
-
-
-
-
-
-
 
 function validerFormulaire() {
 	///tous les question son ok, metre en rouje les pas valide

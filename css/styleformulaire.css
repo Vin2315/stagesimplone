@@ -5,22 +5,18 @@ body {
 	font-family: 'Times New Roman', Times, serif; /*tipo letra*/
 }
 
-
-
 * {
-	box-sizing: border-box; /*tamano caja borde*/
-}
-
-body {
-	background: rgba(57, 111, 165, 0.76);
-	font-family: 'Times New Roman', Times, serif; /*tipo letra*/
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
 }
 
 main {
-	max-width: 800px; /*ancho máximo centro pagina*/
-	width: 90%;
-	margin: auto; /*ayuda al max width a centrarce*/
-	padding: 30px; /*relleno del main lo hace gran o peque*/
+	background: rgb(197, 160, 160);
+	width: 700px;
+	margin: 100px auto; /*ayuda al max width a centrarce*/
+	padding: 20px; /*relleno del main lo hace gran o peque*/
+	border-radius: 5px;
 }
 
 h1{
@@ -29,11 +25,17 @@ h1{
     font-weight: 300;
 
 }
+
 .formulaire {
 	display: grid; /*pone pantalla cuadricula*/
 	grid-template-columns: 1fr 1fr; /*pone en 2 columnas*/
 	gap: 20px; /*espaciado o brecha entre los elementos filas columna */
+	
 }
+
+.formulaire input:{
+	display: block;
+} 
 .formulaire__label {
 	display: block; /*bloqueo pantalla */
 	font-weight: 700; /*para fuente negrita peso de la fuente*/
