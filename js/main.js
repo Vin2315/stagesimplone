@@ -77,7 +77,25 @@ function onSubmit(event) {
 }
 
 function init() {
+	initHTMLElements();
 	initEventListeners();
+}
+
+function initHTMLElements() {
+	const headerQuestionnaire = document.getElementById('liste-bouton-raccourci');
+
+	// Crée autant de boutons que de nombre de questions
+	const nombreDeQuestions = recupererNombreDeQuestions();
+	for (let numeroQuestion = 1; numeroQuestion < nombreDeQuestions + 1; numeroQuestion++) {
+		const elementBouton = document.createElement('button');
+		elementBouton.innerHTML = numeroQuestion;
+		elementBouton.className = "raccourci-question";
+		elementBouton.addEventListener('click', (e) => goToCard(numeroQuestion));
+
+		// Injecte le bouton dans le DOM
+		headerQuestionnaire.appendChild(elementBouton);
+	}
+
 }
 
 function initEventListeners() {
@@ -95,12 +113,30 @@ function initEventListeners() {
 	for (let index = 0; index < listeBoutonPrecedent.length; index++) {
 		const boutonPrecedent = listeBoutonPrecedent[index];
 		const boutonSuivant = listeBoutonSuivant[index];
-		boutonPrecedent.addEventListener('click', (e) => goToCard(index));
-		boutonSuivant.addEventListener('click', (e) => goToCard(index + 2));
+		boutonPrecedent.addEventListener('click', (e) => validerQuestion(index + 1, index));
+		boutonSuivant.addEventListener('click', (e) => validerQuestion(index + 1, index + 2));
 	}
 }
 
+function recupererNombreDeQuestions() {
+	const listeQuestionCard = document.getElementsByClassName('question-card');
+	const nombreDeQuestions = listeQuestionCard.length;
+	return nombreDeQuestions;
+}
+
+function validerQuestion(numeroQuestion, cardDestination) {
+	const questionCard = document.getElementById(`question_${numeroQuestion}`);
+	// Si la question est validée, la progress bar avance
+	if (true) {
+		const nombreDeQuestions = recupererNombreDeQuestions();
+		const progressBar = document.getElementById('niveau-completude-test');
+		progressBar.value = progressBar.value + (100 / nombreDeQuestions);
+	}
+
+	goToCard(cardDestination);
+}
 function goToCard(numeroCard) {
+	// Verifier si la question a été répondue
 	const carrouselElement = document.getElementById('formulaire_test');
 	carrouselElement.style.transform = `translateX(-${numeroCard}00vw)`;
 }

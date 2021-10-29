@@ -46,7 +46,7 @@ article#presentation-card {
   justify-content: space-evenly;
   align-items: center;
   width: auto;
-  height: 60vh;
+  height: 60%;
 }
 /*otras imagenes primer grupo*/
 .item__body img-answer img {
@@ -88,6 +88,24 @@ article#presentation-card {
 }
 
 /* CARROUSEL */
+#header-questionnaire {
+  position: fixed;
+  z-index: 10;
+  width: 100vw;
+  height: 10vh;
+}
+
+#liste-bouton-raccourci {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+#niveau-completude-test {
+  width: 80vw;
+  display: block;
+  margin: 0 auto;
+}
 
 .carrousel {
   display: flex;
@@ -97,8 +115,8 @@ article#presentation-card {
 
 .card-carrousel {
   min-width: 98vw;
-  height: 95vh;
-  margin: 0 1vw;
+  height: 85vh;
+  margin: 10vh 1vw 0 1vw;
 }
 
 .bouton {
