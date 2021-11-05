@@ -60,7 +60,7 @@ header::before {
 nav {
 	width: 100%; /* largo barra*/
 	height: 80px; /* ALTURA DE LA BARRA*/
-	background: rgba(27, 27, 27, 0.932); /* color barra */
+	background: rgba(0, 0, 0, 1); /* color barra */
 	border-bottom: 1px solid transparent; /* borde o contorno mi  BARRA no se buebe barra*/
 	box-shadow: 1px 1px 10px 0 rgba(218, 71, 71, 0.2); /* borde o contorno mi aliniado no se muebe  BARRA*/
 	position: fixed; /*MI BARRA SE QUEDA FIJA SUPERIORMENTE*/
@@ -74,8 +74,8 @@ nav {
 }
 
 #logo {
-	width: 50px;
-	height: 50px; /* CAMBIA LA ALTURA DE MI LOGO*/
+	width: 10%;
+	/*height: 50px; /* CAMBIA LA ALTURA DE MI LOGO*/
 }
 
 #nav-hamburger {
@@ -83,6 +83,11 @@ nav {
 }
 
 @media screen and (max-width: 800px) {
+	#logo {
+		width: 20%;
+		/*height: 50px; /* CAMBIA LA ALTURA DE MI LOGO*/
+	}
+
 	#nav-hamburger {
 		display: block;
 	}
@@ -159,6 +164,11 @@ nav {
 	align-items: center;
 }
 
+section.container-header {
+	width: 100%;
+	height: 480px;
+}
+
 #hero-img {
 	width: 550px;
 	margin: 10px;
@@ -202,18 +212,15 @@ nav {
 	box-shadow: 0 8px 32px rgba(112, 121, 117, 0.46);
 }
 
-
-.language{
-
-  font-size: 16px;
+.language {
+	font-size: 16px;
 	padding: 15px 20px;
-  color: #fff;
+	color: #fff;
 	background: #32021f;
 	display: inline-block;
 	padding: 15px 20px;
 	text-decoration: none;
-	margin:0 10px ;
-
+	margin: 0 10px;
 }
 
 .titre {
@@ -477,4 +484,3 @@ footer {
 	}
 }
 /*_______________________________________________________PAGE 2 __________________________________*/
-
