@@ -127,18 +127,48 @@ function recupererNombreDeQuestions() {
 function validerQuestion(numeroQuestion, cardDestination) {
 	const questionCard = document.getElementById(`question_${numeroQuestion}`);
 	// Si la question est validée, la progress bar avance
-	if (true) {
+	const questionEstValidee = recupererReponse(`question_${numeroQuestion}`) !== null;
+	mettreAJourBoutonRaccourci(numeroQuestion, questionEstValidee);
+
+	if (questionEstValidee) {
+		const reponses = recupererReponsesFormulaire();
+		let nombreReponsesValides = 0;
+		for (let reponse of Object.values(reponses)) {
+			if (reponse !== null) {
+				nombreReponsesValides++;
+			}
+		}
 		const nombreDeQuestions = recupererNombreDeQuestions();
 		const progressBar = document.getElementById('niveau-completude-test');
-		progressBar.value = progressBar.value + (100 / nombreDeQuestions);
+		progressBar.value = nombreReponsesValides * (100 / nombreDeQuestions);
 	}
+
 
 	goToCard(cardDestination);
 }
+
+function mettreAJourBoutonRaccourci(numeroQuestion, questionEstValidee) {
+	const raccourciBouton = document.getElementById('liste-bouton-raccourci').children.item(numeroQuestion - 1);
+	if (questionEstValidee) {
+		raccourciBouton.classList.add('question-repondu')
+		raccourciBouton.classList.remove('question-non-repondu')
+	} else {
+		raccourciBouton.classList.add('question-non-repondu')
+		raccourciBouton.classList.remove('question-repondu')
+	}
+
+}
+
 function goToCard(numeroCard) {
 	// Verifier si la question a été répondue
 	const carrouselElement = document.getElementById('formulaire_test');
 	carrouselElement.style.transform = `translateX(-${numeroCard}00vw)`;
+
+	if (numeroCard === 0) {
+		document.getElementById('header-questionnaire').classList.add("hidden");
+	} else {
+		document.getElementById('header-questionnaire').classList.remove("hidden");
+	}
 }
 
 function validerFormulaire() {
