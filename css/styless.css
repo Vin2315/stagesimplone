@@ -1,0 +1,179 @@
+* {
+	margin: 0;
+	padding: 0;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+/* fondo con separacion y poco centrado y estilo*/
+body {
+	font-size: 16px;
+	font-family: 'Raleway', sans-serif;
+	background: #1b1d35;
+	color: #fff;
+}
+
+/* encuadramos y centramos el texto*/
+.container {
+	max-width: 500px;
+	width: 90%;
+	margin: auto;
+}
+
+/* separa le texto loren del anterior parrafo*/
+.container article {
+	padding: 30px;
+	background: #fff;
+}
+
+/* contenido del tecto separamos*/
+.container article p {
+	margin-bottom: 10px;
+	color: #000;
+}
+
+/* cdecora el texto */
+a {
+	text-decoration: none;
+	color: #b8711b;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+/* cdecora el texto */
+.container {
+	max-width: 500px;
+	width: 90%;
+	margin: auto;
+}
+/* forma titulo y baja el texto de la barra al centro*/
+.titre {
+	font-weight: 300;
+	color: #b8711b;
+	text-align: center;
+	margin: 60px 0 30px 0;
+}
+/* estilo del borde de la barra pequena */
+.border {
+	border: none;
+	margin-bottom: 15px;
+	border-top: 10px solid #33b81b;
+	background: none;
+	color: none;
+}
+
+/* creadon el recuadro para que entren los tres preguntas */
+.formulaire {
+	background: #2c2c47;
+	padding: 30px;
+	margin-bottom: 30px;
+}
+/* espacios entre formularios  */
+.formulaire .form-group {
+	width: 100%;
+	margin-bottom: 10px;
+}
+
+/* estilo y forma a las cajas mas grandes uniformes  */
+.formulaire input[type='text'],
+.formulaire input[type='password'] {
+	padding: 15px;
+	font-family: 'Raleway', sans-serif;
+	font-size: 18px;
+	line-height: 18px;
+	border: none;
+	vertical-align: top;
+}
+
+.inputlong {
+	width: 88%;
+}
+
+/* estilo y forma a las cajas de los iconos del usuario pasw */
+.formulaire .icono {
+	padding: 15px;
+	text-align: center;
+	width: 48px;
+	max-height: 55%;
+	/* max-height: 48px */
+	font-size: 18px;
+	line-height: 18px;
+	background: #c8c8c8;
+	display: inline-block;
+	color: #6b6b6b;
+	vertical-align: top;
+}
+
+.formulair .icono.izquierda {
+	margin-right: 4px;
+	-webkit-border-radius: 3px 0 0 3px;
+	-moz-border-radius: 3px 0 0 3px;
+	-ms-border-radius: 3px 0 0 3px;
+	-o-border-radius: 3px 0 0 3px;
+	border-radius: 3px 0 0 3px;
+}
+
+.formulair .utilisateur,
+.formulair .password {
+	width: calc(100% - 52px);
+	-webkit-border-radius: 0 3px 3px 0;
+	-moz-border-radius: 0 3px 3px 0;
+	-ms-border-radius: 0 3px 3px 0;
+	-o-border-radius: 0 3px 3px 0;
+	border-radius: 0 3px 3px 0;
+}
+
+.formulaire .password_btn {
+	width: calc(100% - 105px);
+}
+.formulaire.password_btn {
+	width: calc(100% - 105px);
+}
+.formulaire .error ul {
+	padding: 0 15px;
+}
+.formulaire .error ul li {
+	margin-bottom: 10px;
+}
+
+.formulaire .submit-btn {
+	padding: 15px;
+	text-align: center;
+	width: 48px;
+	max-height: 20%;
+	/* max-height: 48px */
+	font-size: 18px;
+	line-height: 18px;
+	background: #679863;
+	display: inline-block;
+	color: #fff;
+	background: #769766;
+	cursor: pointer;
+
+	-webkit-border-radius: 0 3px 3px 0;
+	-moz-border-radius: 0 3px 3px 0;
+	-ms-border-radius: 0 3px 3px 0;
+	-o-border-radius: 0 3px 3px 0;
+	border-radius: 0 3px 3px 0;
+}
+
+.text-registre {
+	text-align: center;
+}
+
+.text-registre a {
+	display: block;
+	font-size: 18px;
+}
+
+.container article {
+	padding: 30px;
+	background: #fff;
+}
+
+.container article p {
+	margin-bottom: 10px;
+	color: #000;
+}
