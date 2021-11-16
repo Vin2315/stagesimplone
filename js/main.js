@@ -173,6 +173,7 @@ function goToCard(numeroCard) {
 
 function validerFormulaire() {
 	///tous les question son ok, metre en rouje les pas valide
+	return true;
 }
 // Demarrage de l'app
 init();
