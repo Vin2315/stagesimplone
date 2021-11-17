@@ -37,8 +37,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         if ($verifPassword) {
             $_SESSION['utilisateur'] = $utilisateur;
             echo "test";
-            //header('Location: index.php');
-
+            header('Location: index.html');
+            exit();
             //echo "Informations incorrectes"; 
             // echo "Datos correctos"; 
         } else {

@@ -5,7 +5,7 @@
 //
 
 if (isset($_SESSION['utilisateur'])) {
-    header('Location: index.php');
+    header('Location: index.html');
     die();
 }
 
