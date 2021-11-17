@@ -9,6 +9,11 @@ section {
   justify-content: space-evenly;
 }
 
+#test-redaction-textarea {
+  width: 70vw;
+  margin: 10px 0;
+}
+
 /* boton retorne page*/
 .returne,
 .btn,
@@ -182,7 +187,6 @@ article#presentation-card {
 .button.bouton-precedent {
   background-color: rgb(224, 101, 107);
 }
-
 
 /* boton envoye suivant */
 .page-control {
