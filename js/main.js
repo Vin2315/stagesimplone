@@ -64,26 +64,34 @@ function replacer(au, en, àla, à) {
 	return str + ' - ' + p1 + ' , ' + p2;
 }
 
+/* cet funtion est appelle quan valide le formulaire */
 function onSubmit(event) {
 	event.preventDefault();
 	const resultat = recupererReponsesFormulaire();
 
 	const estValide = validerFormulaire();
-	if (estValide) {
+	if (true) {
 		// Envoyer une requete au serveur
 		envoyerResultat(resultat);
 	} else {
 		// Recuperer la liste des questions qui manquent
-		const questionsManquantes = Object.entries(resultat).filter(question => {
-			const valeurQuestion = question[1];
-			return valeurQuestion === null;
-		});
+		const questionsManquantes = Object.entries(resultat).filter(
+			(question) => {
+				const valeurQuestion = question[1];
+				return valeurQuestion === null;
+			},
+		);
 		// Je recupere pour chaque [label, valeur] de chaque question son label, puis a la 10e position le chiffre de la question
-		const numerosQuestionsManquantes = questionsManquantes.map(question => question[0].substring(9));
-		alert(`Votre formulaire n'est pas valide, il manque les questions suivantes: ${numerosQuestionsManquantes.join(',')}`);
+		const numerosQuestionsManquantes = questionsManquantes.map((question) =>
+			question[0].substring(9),
+		);
+		alert(
+			`Votre formulaire n'est pas valide, il manque les questions suivantes: ${numerosQuestionsManquantes.join(
+				',',
+			)}`,
+		);
 		// Rediriger l'utilisateur vers la premiere question qui manque
-		goToCard(numerosQuestionsManquantes[0])
-
+		goToCard(numerosQuestionsManquantes[0]);
 	}
 }
 
@@ -91,12 +99,13 @@ function envoyerResultat(resultat) {
 	console.log(resultat);
 
 	fetch('evaluation.php', {
-		method: "POST",
-		body: resultat
-	}).then(response => {
+		method: 'POST',
+		headers: {'Content-Type': 'application/json'},
+		body: resultat,
+	}).then((response) => {
 		// TODO: Rediriger vers page de succes
-		console.log(response.text())
-	})
+		console.log(response.text());
+	});
 }
 
 function init() {
@@ -105,20 +114,27 @@ function init() {
 }
 
 function initHTMLElements() {
-	const headerQuestionnaire = document.getElementById('liste-bouton-raccourci');
+	const headerQuestionnaire = document.getElementById(
+		'liste-bouton-raccourci',
+	);
 
 	// Crée autant de boutons que de nombre de questions
 	const nombreDeQuestions = recupererNombreDeQuestions();
-	for (let numeroQuestion = 1; numeroQuestion < nombreDeQuestions + 1; numeroQuestion++) {
+	for (
+		let numeroQuestion = 1;
+		numeroQuestion < nombreDeQuestions + 1;
+		numeroQuestion++
+	) {
 		const elementBouton = document.createElement('button');
 		elementBouton.innerHTML = numeroQuestion;
-		elementBouton.className = "raccourci-question";
-		elementBouton.addEventListener('click', (e) => goToCard(numeroQuestion));
+		elementBouton.className = 'raccourci-question';
+		elementBouton.addEventListener('click', (e) =>
+			goToCard(numeroQuestion),
+		);
 
 		// Injecte le bouton dans le DOM
 		headerQuestionnaire.appendChild(elementBouton);
 	}
-
 }
 
 function initEventListeners() {
@@ -136,8 +152,12 @@ function initEventListeners() {
 	for (let index = 0; index < listeBoutonPrecedent.length; index++) {
 		const boutonPrecedent = listeBoutonPrecedent[index];
 		const boutonSuivant = listeBoutonSuivant[index];
-		boutonPrecedent.addEventListener('click', (e) => validerQuestion(index + 1, index));
-		boutonSuivant.addEventListener('click', (e) => validerQuestion(index + 1, index + 2));
+		boutonPrecedent.addEventListener('click', (e) =>
+			validerQuestion(index + 1, index),
+		);
+		boutonSuivant.addEventListener('click', (e) =>
+			validerQuestion(index + 1, index + 2),
+		);
 	}
 }
 
@@ -150,7 +170,8 @@ function recupererNombreDeQuestions() {
 function validerQuestion(numeroQuestion, cardDestination) {
 	const questionCard = document.getElementById(`question_${numeroQuestion}`);
 	// Si la question est validée, la progress bar avance
-	const questionEstValidee = recupererReponse(`question_${numeroQuestion}`) !== null;
+	const questionEstValidee =
+		recupererReponse(`question_${numeroQuestion}`) !== null;
 	mettreAJourBoutonRaccourci(numeroQuestion, questionEstValidee);
 
 	if (questionEstValidee) {
@@ -166,20 +187,20 @@ function validerQuestion(numeroQuestion, cardDestination) {
 		progressBar.value = nombreReponsesValides * (100 / nombreDeQuestions);
 	}
 
-
 	goToCard(cardDestination);
 }
 
 function mettreAJourBoutonRaccourci(numeroQuestion, questionEstValidee) {
-	const raccourciBouton = document.getElementById('liste-bouton-raccourci').children.item(numeroQuestion - 1);
+	const raccourciBouton = document
+		.getElementById('liste-bouton-raccourci')
+		.children.item(numeroQuestion - 1);
 	if (questionEstValidee) {
-		raccourciBouton.classList.add('question-repondu')
-		raccourciBouton.classList.remove('question-non-repondu')
+		raccourciBouton.classList.add('question-repondu');
+		raccourciBouton.classList.remove('question-non-repondu');
 	} else {
-		raccourciBouton.classList.add('question-non-repondu')
-		raccourciBouton.classList.remove('question-repondu')
+		raccourciBouton.classList.add('question-non-repondu');
+		raccourciBouton.classList.remove('question-repondu');
 	}
-
 }
 
 function goToCard(numeroCard) {
@@ -188,16 +209,18 @@ function goToCard(numeroCard) {
 	carrouselElement.style.transform = `translateX(-${numeroCard}00vw)`;
 
 	if (numeroCard === 0) {
-		document.getElementById('header-questionnaire').classList.add("hidden");
+		document.getElementById('header-questionnaire').classList.add('hidden');
 	} else {
-		document.getElementById('header-questionnaire').classList.remove("hidden");
+		document
+			.getElementById('header-questionnaire')
+			.classList.remove('hidden');
 	}
 }
 
 function validerFormulaire() {
 	///tous les questions son ok, mettre en rouge les pas valides
 	const resultat = recupererReponsesFormulaire();
-	return Object.values(resultat).every(valeur => valeur !== null);
+	return Object.values(resultat).every((valeur) => valeur !== null);
 }
 
 // Demarrage de l'app
