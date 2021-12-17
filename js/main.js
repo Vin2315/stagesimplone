@@ -100,8 +100,8 @@ function envoyerResultat(resultat) {
 
 	fetch('evaluation.php', {
 		method: 'POST',
-		headers: {'Content-Type': 'application/json'},
-		body: resultat,
+		headers: { 'Content-Type': 'application/json' },
+		body: JSON.stringify(resultat),
 	}).then((response) => {
 		// TODO: Rediriger vers page de succes
 		console.log(response.text());
