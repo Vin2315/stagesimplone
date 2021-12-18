@@ -26,6 +26,9 @@ function recupererReponsesFormulaire() {
 	for (let index = 1; index < 15; index++) {
 		reponses['question_' + index] = recupererReponse('question_' + index);
 	}
+	// Recupere la 15e question qui est la redaction
+	const redaction = document.getElementById("test-redaction-textarea").value;
+	reponses['question_15'] = redaction
 	return reponses;
 }
 
