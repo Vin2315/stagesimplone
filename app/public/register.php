@@ -1,12 +1,11 @@
 <?php session_start();
 include '../dbconn.php';
-
 // Comprobamos si ya tiene una sesion
 # Si ya tiene una sesion redirigimos al contenido, para que no pueda volver a registrar un usuario.
 //
 
 if (isset($_SESSION['utilisateur'])) {
-    header('Location: home.html');
+    header('Location: evaluation.php');
 }
 
 // Comprobamos si ya han sido enviado los datos
@@ -18,8 +17,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $hashedPassword = hash('sha512', $_POST['password']);
     $passwordEncrypted = password_hash($hashedPassword, PASSWORD_DEFAULT);
     $password2 = $_POST['password2'];
-
-    //echo "$utilisateur , $password , $password2"; 
 
     // // Tambien podemos limpiar mediante las funciones
     // 	# El problema es que si lo hacemos de esta forma no estamos eliminando caracteres especiales, solo los transformamos.
@@ -36,8 +33,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     // Comprobamos que ninguno de los campos este vacio.
     if (empty($utilisateur) or empty($password) or empty($password2)) {
         $error .= '<li>Veuillez remplir toutes les données correctement</li>';
+    } elseif ($password != $password2) {
+        $error .= "<li>Votre mot de passe n'est pas correct</li>";
     } else {
-
         // Comprobamos que el usuario no exista ya.
         try {
             // Nos conectamos a la base de datos
@@ -52,24 +50,16 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 $error .= '<li> Le Utilisateur existe déjà</li>';
             } else {
                 //inscription del utilisateur
-
-
-                //$passwordEncrypted = password_hash($password, PASSWORD_DEFAULT); 
                 $statement = $conexion->prepare('INSERT INTO user (utilisateur ,email, pass) VALUES ( :utilisateur, :email, :pass )');
                 $statement->execute(array(':utilisateur' => $utilisateur, ':email' => $email, ':pass' => $passwordEncrypted));
             }
         } catch (PDOException $e) {
-
             echo "Error:" . $e->getMessage();
         }
 
-        //echo "$utilisateur , $email, $password , $password2"; 
-        if ($password != $password2) {
-            $error .= "<li>Votre mot de passe n'est pas correct</li>";
-        }
+        // Comprobamos si hay errores, sino entonces agregamos el usuario y redirigimos.
+        header('Location: login.php');
     }
-
-    // Comprobamos si hay errores, sino entonces agregamos el usuario y redirigimos.
 }
 
 require_once(VIEWS_PATH . "/register.views.php");

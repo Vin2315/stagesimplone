@@ -28,7 +28,7 @@ function recupererReponsesFormulaire() {
 	}
 	// Recupere la 15e question qui est la redaction
 	const redaction = document.getElementById("test-redaction-textarea").value;
-	reponses['question_15'] = redaction
+	reponses['redaction'] = redaction
 	return reponses;
 }
 
@@ -100,11 +100,18 @@ function onSubmit(event) {
 
 function envoyerResultat(resultat) {
 	console.log(resultat);
+	const _resultat = Object.values(resultat);
+	delete _resultat.redaction;
+	const reponses = _resultat
 
+	const redaction = resultat.redaction;
 	fetch('evaluation.php', {
 		method: 'POST',
 		headers: { 'Content-Type': 'application/json' },
-		body: JSON.stringify(resultat),
+		body: JSON.stringify({
+			reponses,
+			redaction
+		}),
 	}).then((response) => {
 		// TODO: Rediriger vers page de succes
 		console.log(response.text());

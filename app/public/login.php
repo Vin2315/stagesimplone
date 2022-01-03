@@ -2,7 +2,7 @@
 // Comprobamos si ya tiene una sesion
 # Si ya tiene sesion redirigimos al contenido, para que no pueda acceder al formulario
 if (isset($_SESSION['utilisateur'])) {
-    header('Location: ' . VIEWS_PATH . '/home.views.php');
+    header('Location: evaluation.php');
 }
 
 $error = '';
@@ -28,7 +28,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
         if ($verifPassword) {
             $_SESSION['utilisateur'] = $utilisateur;
-            header('Location: home.html');
+            header('Location: evaluation.php');
             exit();
             //echo "Informations incorrectes"; 
             // echo "Datos correctos"; 
