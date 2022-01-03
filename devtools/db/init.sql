@@ -1,3 +1,5 @@
+drop table if exists user, evaluation, questions;  
+
 create table user (
   id int not null auto_increment,
   utilisateur varchar(255) not null,
@@ -22,7 +24,7 @@ create table questions (
   option_4 varchar(255),
   reponse varchar(255),
   primary key(id)
-)
+); 
 insert into
   user (id, utilisateur, email, pass)
 values
