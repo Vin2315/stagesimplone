@@ -1,18 +1,18 @@
 <?php session_start();
+include '../dbconn.php';
 
 // Comprobamos si ya tiene una sesion
 # Si ya tiene una sesion redirigimos al contenido, para que no pueda volver a registrar un usuario.
 //
 
 if (isset($_SESSION['utilisateur'])) {
-    header('Location: index.html');
-    die();
+    header('Location: home.html');
 }
 
 // Comprobamos si ya han sido enviado los datos
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     // Validamos que los datos hayan sido rellenados agregamos en minuscul BD con strtolower y con filter_var limpia lo herores Y LA PROTECION DE CODIGO con FILTER_SANITIZE_STRING 
-    $utilisateur = filter_var(strtolower($_POST['utilisateur']), FILTER_SANITIZE_STRING);
+    $utilisateur = filter_var(strtolower($_POST['utilisateur']), FILTER_SANITIZE_FULL_SPECIAL_CHARS);
     $email = filter_var(strtolower($_POST['mail']), FILTER_VALIDATE_EMAIL);
     $password = $_POST['password'];
     $hashedPassword = hash('sha512', $_POST['password']);
@@ -40,7 +40,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
         // Comprobamos que el usuario no exista ya.
         try {
-            $conexion = new PDO('mysql:host=localhost;dbname=etudiants', 'root', '');
+            // Nos conectamos a la base de datos
+            include '../dbconn.php';
             $statement = $conexion->prepare('SELECT * FROM user WHERE email = :email LIMIT 1');
             $statement->execute(array(':email' => $email));
             //fetch nos va a devolver el resultado o false en caso de que no haya resultado.
@@ -70,4 +71,5 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     // Comprobamos si hay errores, sino entonces agregamos el usuario y redirigimos.
 }
-require 'views/registre.view.php';
+
+require_once(VIEWS_PATH . "/register.views.php");

@@ -1,33 +1,25 @@
 <?php session_start();
-
 // Comprobamos si ya tiene una sesion
 # Si ya tiene sesion redirigimos al contenido, para que no pueda acceder al formulario
 if (isset($_SESSION['utilisateur'])) {
-    header('Location: contenu.php');
-    //'Location: contenu.php'
+    header('Location: ' . VIEWS_PATH . '/home.views.php');
 }
 
 $error = '';
+// Nos conectamos a la base de datos
+include '../dbconn.php';
+
 // Comprobamos si ya han sido enviado los datos
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    $utilisateur = filter_var(strtolower($_POST['utilisateur']), FILTER_SANITIZE_STRING);
+    $utilisateur = filter_var(strtolower($_POST['utilisateur']), FILTER_SANITIZE_FULL_SPECIAL_CHARS);
 
-    // Nos conectamos a la base de datos
-    try {
-        $conexion = new PDO('mysql:host=localhost;dbname=etudiants', 'root', '');
-    } catch (PDOException $e) {
-        echo "Error:" . $e->getMessage();;
-    }
     //ENTREGA valores de la BD no los tengo 
-    $statement = $conexion->prepare('
-    SELECT * FROM user WHERE utilisateur = :utilisateur');
+    $statement = $conexion->prepare('SELECT * FROM user WHERE utilisateur = :utilisateur');
     $statement->execute(array(
         ':utilisateur' => $utilisateur
     ));
 
     $results = $statement->fetch();
-
-    // var_dump($results);
 
     if ($results !== false) {
         $encryptedPassword = $results["pass"]; //mot de passe en bd
@@ -36,8 +28,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
         if ($verifPassword) {
             $_SESSION['utilisateur'] = $utilisateur;
-            echo "test";
-            header('Location: index.html');
+            header('Location: home.html');
             exit();
             //echo "Informations incorrectes"; 
             // echo "Datos correctos"; 
@@ -47,4 +38,4 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     }
 }
 
-require 'views/login.views.php';
+require_once(VIEWS_PATH . "/login.views.php");

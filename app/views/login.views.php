@@ -37,21 +37,15 @@
                 </div>
             <?php endif; ?>
 
-
         </form>
 
 
         <p class="texto-registrate">
             ¿ Vous n'avez pas de compte?
-            <a href="registre.php">Démarre la session</a>
+            <a href="register.php">Démarre la session</a>
         </p>
 
-
-
-
     </div>
-
-
 
 </body>
 
