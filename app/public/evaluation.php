@@ -1,16 +1,20 @@
 <?php session_start();
 require_once("../config.php");
 
-$utilisateur_connecte = $_SESSION['utilisateur'];
-if (!isset($utilisateur_connecte)) {
+if (!isset($_SESSION['utilisateur'])) {
    header('Location: login.php');
-   //'Location: contenu.php'
+}
+$utilisateur_connecte = $_SESSION['utilisateur'];
+
+include '../dbconn.php';
+
+
+if ($_SERVER['REQUEST_METHOD'] == 'GET') {
+   $sql_select_questions = 'SELECT * FROM questions ORDER BY numero';
+   $questions = $conexion->query($sql_select_questions);
 }
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-   // TODO: Enregistrer les resultats
-   include '../dbconn.php';
-
    $statement = $conexion->prepare('SELECT * FROM user WHERE utilisateur = :utilisateur');
    $statement->execute(array(
       ':utilisateur' => $utilisateur_connecte
@@ -53,8 +57,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
    }
 
 
-   // Mettre en place une table 'evaluations' qui va contenir une colonne pour chaque reponse
-   // et aussi la foreign key/reference de l'utilisateur qui a passe le test
    // TODO: corriger les reponses
 
    // TODO: renvoyer les corrections

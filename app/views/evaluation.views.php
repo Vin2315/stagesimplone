@@ -45,6 +45,90 @@
 
         </section>
 
+        <?php
+        foreach ($questions as $question) {
+            // echo json_encode($question);
+        ?>
+            <section class="question-card card-carrousel" id="question_<?php echo $question["numero"]; ?>">
+                <h2><?php echo $question["category"]; ?></h2>
+                <h3><?php echo $question["question_label"]; ?></h3>
+
+                <div>
+                    <?php
+                    switch ($question["question_link_type"]) {
+                        case "img":
+                    ?>
+                            <img src=<?php echo $question["question_link"]; ?> alt="Image Question" />
+                        <?php
+                            break;
+                        case "audio":
+                        ?>
+                            <audio controls>
+                                <source src=<?php echo $question["question_link"]; ?> controls>
+                            </audio>
+                        <?php
+                            break;
+                        case "video":
+                        ?>
+                            <video width="320" height="240" controls>
+                                <source src=<?php echo $question["question_link"]; ?> type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                    <?php
+                            break;
+                    }
+                    ?>
+                </div>
+
+                <div id="question-<?php echo $question["numero"]; ?>" class="img-answer-block">
+                    <?php
+                    foreach (array('A', 'B', 'C', 'D') as $letter) {
+                    ?>
+                        <div class="img-answer">
+                            <input type="radio" name="question<?php echo $question["numero"]; ?>" value="<?php echo $letter; ?>" id="q<?php echo $question["numero"]; ?>-r1">
+                            <label for="q<?php echo $question["numero"]; ?>-r1">
+                                <?php
+                                switch ($question["reponse_type"]) {
+                                    case "text":
+                                        echo $question["option_" . $letter];
+                                        break;
+                                    case "img":
+                                ?>
+                                        <img src=<?php echo $question["option_" . $letter]; ?> alt="Image Option <?php echo $letter; ?>" />
+                                    <?php
+                                        break;
+                                    case "audio":
+                                    ?>
+                                        <audio controls>
+                                            <source src=<?php echo $question["option_" . $letter]; ?> controls>
+                                        </audio>
+                                    <?php
+                                        break;
+                                    case "video":
+                                    ?>
+                                        <video width="320" height="240" controls>
+                                            <source src=<?php echo $question["option_" . $letter]; ?> type="video/mp4">
+                                            Your browser does not support the video tag.
+                                        </video>
+                                <?php
+                                        break;
+                                }
+                                ?>
+                            </label>
+                        </div>
+                    <?php
+                    }
+                    ?>
+                </div>
+                <div class="button-groupe">
+                    <button type="button" class="button bouton-precedent">Precedent</button>
+                    <button type="button" class="button bouton-suivant">Suivant</button>
+                </div>
+
+            </section>
+        <?php
+        }
+        ?>
         <section class="question-card card-carrousel" id="question_1">
             <h2> A.- Compréhension écrite</h2>
             <h3> 1.- Sélectionnez l’infirmier..</h3>
