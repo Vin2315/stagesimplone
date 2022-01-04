@@ -7,13 +7,14 @@
     if something changes such as your database credentials, or a path to a specific resource,
     you'll only need to update it here.
 */
+date_default_timezone_set('Europe/Paris');
 
 $config = array(
     "db" => array(
         "dbname" => "etudiants",
-        "username" => "admin",
-        "password" => "secret",
-        "host" => "mysql:3306"
+        "username" => "root",
+        "password" => "",
+        "host" => "localhost:3306"
     ),
     // "urls" => array(
     //     "baseUrl" => "http://example.com"
