@@ -10,7 +10,7 @@ include '../dbconn.php';
 
 
 if ($_SERVER['REQUEST_METHOD'] == 'GET') {
-   $sql_select_questions = 'SELECT * FROM questions ORDER BY numero';
+   $sql_select_questions = 'SELECT * FROM question ORDER BY numero';
    $questions = $conexion->query($sql_select_questions);
 }
 

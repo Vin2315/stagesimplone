@@ -1,6 +1,6 @@
 drop table if exists user,
 evaluation,
-questions;
+question;
 create table user (
   id int not null auto_increment,
   utilisateur varchar(255) not null,
@@ -15,7 +15,7 @@ create table evaluation (
   redaction varchar(512),
   primary key(id)
 );
-create table questions (
+create table question (
   id int not null auto_increment,
   numero int not null,
   category varchar(255),
@@ -40,7 +40,7 @@ values
     '$2y$10$u7GCIHJPq81TqOw7YddOPeTpaZBJux0Br977OLBqBuAZ0qo86rSuy'
   );
 insert into
-  questions (
+  question (
     id,
     numero,
     category,

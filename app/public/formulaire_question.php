@@ -11,6 +11,50 @@ include '../dbconn.php';
 
 // Comprobamos si ya han sido enviado los datos
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+
+    try {
+
+        $numero = $_POST['numero'];
+        $category = $_POST['category'];
+        $question_link_type = $_POST['question_link_type'];
+        $question_link = $_POST['question_link'];
+        $question_label = $_POST['question_label'];
+        $reponse_type = $_POST['reponse_type'];
+        $option_A = $_POST['option_A'];
+        $option_B = $_POST['option_B'];
+        $option_C = $_POST['option_C'];
+        $option_D = $_POST['option_D'];
+        $reponse = $_POST['reponse'];
+        $statement = $conexion->prepare('insert into question (numero,category,question_link_type,question_link,question_label,reponse_type,option_A,option_B,option_C,option_D,reponse) values (:numero,:category,:question_link_type,:question_link,:question_label,:reponse_type,:option_A,:option_B,:option_C,:option_D,:reponse)');
+
+
+        $reponse = $statement->execute(array(
+            ":numero" => $numero,
+            ":category" => $category,
+            ":question_link_tupe" => $question_link_tupe,
+            ":question_link" => $question_link,
+            ":question_label" => $question_label,
+            ":reponse_type" => $reponse_type,
+            ":option_A" => $option_A,
+            ":option_B" => $option_B,
+            ":option_C" => $option_C,
+            ":option_D" => $option_D,
+            ":reponse" => $reponse
+        ));
+
+        $results = $statement->fetch();
+        echo json_encode($results);
+    } catch (PDOException $e) {
+        echo "<br>" . $e->getMessage();
+    }
+
+
+
+
+
+
+
+
     // $utilisateur = filter_var(strtolower($_POST['utilisateur']), FILTER_SANITIZE_FULL_SPECIAL_CHARS);
 
     // //ENTREGA valores de la BD no los tengo 
