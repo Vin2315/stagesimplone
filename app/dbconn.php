@@ -5,4 +5,5 @@ try {
     $conexion = new PDO('mysql:host=' . $db_config['host'] . ';dbname=' . $db_config['dbname'], $db_config['username'], $db_config['password']);
 } catch (PDOException $e) {
     echo ("Error:" . $e->getMessage());
+    die();
 }

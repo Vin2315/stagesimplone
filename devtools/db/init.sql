@@ -63,12 +63,13 @@ values
     NULL,
     "Sélectionnez l’infirmier",
     "img",
-    "assets/img/imga1.jpg",
-    "assets/img/imga (1).jpg",
-    "assets/img/imga (2).jpeg",
-    "assets/img/imga (4).jpg",
+    "assets/img/img1.jpg",
+    "assets/img/img2.jpg",
+    "assets/img/img3.jpg",
+    "assets/img/img4.jpg",
     "A"
-  ),(
+  ),
+  (
     2,
     2,
     "Compréhension écrite",

@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=2.0" />
     <title>Test de classement en français</title>
-    <link rel="shortcut icon" type="img/favicon.ico" href="./assets/img/logo9 (1).ico">
+    <link rel="shortcut icon" type="img/favicon.ico" href="./assets/img/logo9.ico">
     <link rel="stylesheet" type="text/css" media="screen" href="css/global.css" />
     <link rel="stylesheet" type="text/css" media="screen" href="css/formindex.css" />
     <script src="js/evaluation.js" defer></script>
@@ -23,7 +23,7 @@
         <section id="presentation-card" class="card-carrousel">
             <h1>Test niveau A1</h1>
             <h3>Bienvenue à Votre site de connaissances.</h3>
-            <img src="assets/img/img1.png" alt="maison" id="main-img" />
+            <img src="assets/img/img0.png" alt="maison" id="main-img" />
 
             <div id="button">
                 <div class="radio-button">
@@ -47,7 +47,6 @@
 
         <?php
         foreach ($questions as $question) {
-            // echo json_encode($question);
         ?>
             <section class="question-card card-carrousel" id="question_<?php echo $question["numero"]; ?>">
                 <h2><?php echo $question["category"]; ?></h2>
@@ -85,8 +84,8 @@
                     foreach (array('A', 'B', 'C', 'D') as $letter) {
                     ?>
                         <div class="img-answer">
-                            <input type="radio" name="question<?php echo $question["numero"]; ?>" value="<?php echo $letter; ?>" id="q<?php echo $question["numero"]; ?>-r1">
-                            <label for="q<?php echo $question["numero"]; ?>-r1">
+                            <input type="radio" name="question<?php echo $question["numero"]; ?>" value="<?php echo $letter; ?>" id="q<?php echo $question["numero"]; ?>-r<?php echo $letter; ?>">
+                            <label for="q<?php echo $question["numero"]; ?>-r<?php echo $letter; ?>">
                                 <?php
                                 switch ($question["reponse_type"]) {
                                     case "text":

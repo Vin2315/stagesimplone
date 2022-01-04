@@ -41,8 +41,8 @@
 
 
         <p class="texto-registrate">
-            ¿ Vous n'avez pas de compte?
-            <a href="register.php">Démarre la session</a>
+            Vous n'avez pas de compte?
+            <a href="register.php">Démarrer la session</a>
         </p>
 
     </div>
