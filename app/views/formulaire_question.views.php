@@ -19,7 +19,7 @@
 
 
         <label for="category">CATEGORY:</label><br>
-        <input type="text" id="category" name="text"><br><br>
+        <input type="text" id="category" name="category"><br><br>
 
 
         <label for="question_link_type">QUESTION_LINK_TYPE:</label><br><br>
