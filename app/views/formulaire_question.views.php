@@ -18,9 +18,14 @@
         <input type="number" id="numero" name="numero"><br><br>
 
 
-        <label for="category">CATEGORY:</label><br>
-        <input type="text" id="category" name="category"><br><br>
-
+        <label for="category">CATEGORY:</label><br><br>
+        <select name="category" id="category">
+            <option selected value="">--Pas de category--</option>
+            <option value="compréhension écrite">Compréhension écrite</option>
+            <option value="communication">Communication</option>
+            <option value="gramer">Gramer</option>
+            <option value="lexique">Lexique</option>
+        </select><br><br>
 
         <label for="question_link_type">QUESTION_LINK_TYPE:</label><br><br>
         <select name="question_link_type" id="question_link_type">

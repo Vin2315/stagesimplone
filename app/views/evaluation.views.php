@@ -135,22 +135,22 @@
             <div id="question-1" class="img-answer-block">
                 <div class="img-answer">
                     <input type="radio" name="question1" value="A" id="q1-r1">
-                    <label for="q1-r1"><img src="assets/img/imga1.jpg" alt="" /></label>
+                    <label for="q1-r1"><img src="assets/img/img1.jpg" alt="" /></label>
                 </div>
 
                 <div class="img-answer">
                     <input type="radio" name="question1" value="B" id="q1-r2">
-                    <label for="q1-r2"><img src="assets/img/imga (1).jpg" alt="" /></label>
+                    <label for="q1-r2"><img src="assets/img/img2.jpg" alt="" /></label>
                 </div>
 
                 <div class="img-answer">
                     <input type="radio" name="question1" value="C" id="q1-r3">
-                    <label for="q1-r3"><img src="assets/img/imga (2).jpeg" alt="" /></label>
+                    <label for="q1-r3"><img src="assets/img/img3.jpeg" alt="" /></label>
                 </div>
 
                 <div class="img-answer">
                     <input type="radio" name="question1" value="D" id="q1-r4">
-                    <label for="q1-r4 "><img src="assets/img/imga (4).jpg" alt="" /></label>
+                    <label for="q1-r4 "><img src="assets/img/img4.jpg" alt="" /></label>
                 </div>
             </div>
             <div class="button-groupe">
@@ -166,10 +166,8 @@
             </div>
             <div class="item__body">
 
+                <h3> 2.- De quelle couleur est cette image ? </h3>
 
-                <h3>
-                    2.- De quelle couleur est cette image ?
-                </h3>
                 <input type="radio" name="question2" value="A" id="q2-r1">
                 <label for="q2-r1">Jaune</label>
                 <input type="radio" name="question2" value="B" id="q2-r2">
@@ -200,24 +198,24 @@
 
                 <div class="img-answer">
                     <input type="radio" name="question3" value="A" id="q3-r1">
-                    <label for="q3-r1"><img src="assets/img/imga (59).jpg" alt="" /></label><br>
+                    <label for="q3-r1"><img src="assets/img/img5.jpg" alt="" /></label><br>
                 </div>
 
 
                 <div class="img-answer">
                     <input type="radio" name="question3" value="B" id="q3-r2">
-                    <label for="q3-r2"><img src="assets/img/imga (60).jpg" alt="" /></label><br>
+                    <label for="q3-r2"><img src="assets/img/img6.jpg" alt="" /></label><br>
                 </div>
 
                 <div class="img-answer">
                     <input type="radio" name="question3" value="C" id="q3-r3">
-                    <label for="q3-r3"><img src="assets/img/imga (61).jpg" alt="" /></label><br>
+                    <label for="q3-r3"><img src="assets/img/img7.jpg" alt="" /></label><br>
                 </div>
 
 
                 <div class="img-answer">
                     <input type="radio" name="question3" value="D" id="q3-r4">
-                    <label for="q3-r4 "><img src="assets/img/imga (62).jpg" alt="" /></label><br>
+                    <label for="q3-r4 "><img src="assets/img/img8.jpg" alt="" /></label><br>
                 </div>
             </div>
             <div class="button-groupe">
@@ -240,22 +238,22 @@
 
                 <div class="img-answer">
                     <input type="radio" name="question4" value="A" id="q4-r1">
-                    <label for="q4-r1"><img src="assets/img/img6.jpg" alt="" /></label><br>
+                    <label for="q4-r1"><img src="assets/img/img9.jpg" alt="" /></label><br>
                 </div>
 
                 <div class="img-answer">
                     <input type="radio" name="question4" value="B" id="q4-r2">
-                    <label for="q4-r2"><img src="assets/img/imga (40).jpg" alt="" /></label><br>
+                    <label for="q4-r2"><img src="assets/img/img10.jpg" alt="" /></label><br>
                 </div>
 
                 <div class="img-answer">
                     <input type="radio" name="question4" value="C" id="q4-r3">
-                    <label for="q4-r3"><img src="assets/img/imga (20).jpg" alt="" /></label><br>
+                    <label for="q4-r3"><img src="assets/img/img11.jpg" alt="" /></label><br>
                 </div>
 
                 <div class="img-answer">
                     <input type="radio" name="question4" value="D" id="q4-r4">
-                    <label for="q4-r4 "><img src="assets/img/imga (11).jpg" alt="" /></label><br>
+                    <label for="q4-r4 "><img src="assets/img/img12.jpg" alt="" /></label><br>
                 </div>
             </div>
             <div class="button-groupe">
@@ -376,7 +374,7 @@
             <h2>Grammaire</h2>
 
             <h4>10.- Les chaises sont ……………</h4>
-            <img src="assets/img/imga (54).jpg" alt="" />
+            <img src="assets/img/img13.jpg" alt="" />
             <div class="answer-block">
                 <input type="radio" id="q10-r1" name="question10" value="A">
                 <label for="q10-r1">vert</label><br>
@@ -403,22 +401,22 @@
 
                 <div class="img-answer">
                     <input type="radio" name="question11" value="A" id="q11-r1">
-                    <label for="q11-r1"><img src="assets/img/imga (64).jpg" alt="" /></label><br>
+                    <label for="q11-r1"><img src="assets/img/img14.jpg" alt="" /></label><br>
                 </div>
 
                 <div class="img-answer">
                     <input type="radio" name="question11" value="B" id="q11-r2">
-                    <label for="q11-r2"><img src="assets/img/imga (65).jpg" alt="" /></label><br>
+                    <label for="q11-r2"><img src="assets/img/img15.jpg" alt="" /></label><br>
                 </div>
 
                 <div class="img-answer">
                     <input type="radio" name="question11" value="C" id="q11-r3">
-                    <label for="q11-r3"><img src="assets/img/imga (66).jpg" alt="" /></label><br>
+                    <label for="q11-r3"><img src="assets/img/img16.jpg" alt="" /></label><br>
                 </div>
 
                 <div class="img-answer">
                     <input type="radio" name="question11" value="D" id="q11-r4">
-                    <label for="q11-r4"><img src="assets/img/imga (67).jpg" alt="" /></label><br>
+                    <label for="q11-r4"><img src="assets/img/img17.jpg" alt="" /></label><br>
                 </div>
             </div>
             <div class="button-groupe">

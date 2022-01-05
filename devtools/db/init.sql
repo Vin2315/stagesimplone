@@ -57,7 +57,6 @@ insert into
 values
   (
     1,
-    1,
     "Compréhension écrite",
     NULL,
     NULL,
@@ -70,7 +69,6 @@ values
     "A"
   ),
   (
-    2,
     2,
     "Compréhension écrite",
     "img",
