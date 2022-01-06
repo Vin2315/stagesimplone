@@ -13,8 +13,8 @@ $config = array(
     "db" => array(
         "dbname" => "etudiants",
         "username" => "root",
-        "password" => "",
-        "host" => "localhost:3306"
+        "password" => "password",
+        "host" => "mysql:3306"
     ),
     // "urls" => array(
     //     "baseUrl" => "http://example.com"

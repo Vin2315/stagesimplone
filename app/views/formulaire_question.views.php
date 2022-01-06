@@ -5,14 +5,15 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Formulaire Question</title>
+    <script src="js/formulaire_question.js" defer></script>
 </head>
 
 <body>
 
-    <h1>Gestion des questions </h1>
-
-    <form action="formulaire_question.php" method="post">
+    <h1 id="form_title">Creation d'une question</h1>
+    <button id="reset_button" type="button">Go to creation</button>
+    <form id="formulaire_question">
 
         <label for="numero">Numero:</label><br>
         <input type="number" id="numero" name="numero"><br><br>
@@ -53,19 +54,19 @@
         </select><br><br>
 
 
-        <label for="option_A">Option_A:</label><br>
-        <input type="text" id="option_A" name="option_A"><br><br>
+        <label for="option_a">Option_A:</label><br>
+        <input type="text" id="option_a" name="option_a"><br><br>
 
 
-        <label for="option_B">option_B:</label><br>
-        <input type="text" id="option_B" name="option_B"><br><br>
+        <label for="option_b">option_b:</label><br>
+        <input type="text" id="option_b" name="option_b"><br><br>
 
-        <label for="option_C">option_C:</label><br>
-        <input type="text" id="option_C" name="option_C"><br><br>
+        <label for="option_c">option_c:</label><br>
+        <input type="text" id="option_c" name="option_c"><br><br>
 
 
-        <label for="option_D">option_D:</label><br>
-        <input type="text" id="option_D" name="option_D"><br><br><br>
+        <label for="option_d">option_d:</label><br>
+        <input type="text" id="option_d" name="option_d"><br><br><br>
 
         <label for="reponse">REPONSE</label><br><br>
         <select name="reponse" id="reponse">

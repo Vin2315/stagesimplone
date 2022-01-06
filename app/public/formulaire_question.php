@@ -17,15 +17,15 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $question_link = $_POST['question_link'];
     $question_label = $_POST['question_label'];
     $reponse_type = $_POST['reponse_type'];
-    $option_A = $_POST['option_A'];
-    $option_B = $_POST['option_B'];
-    $option_C = $_POST['option_C'];
-    $option_D = $_POST['option_D'];
+    $option_a = $_POST['option_a'];
+    $option_b = $_POST['option_b'];
+    $option_c = $_POST['option_c'];
+    $option_d = $_POST['option_d'];
     $reponse = $_POST['reponse'];
 
     try {
 
-        $statement = $conexion->prepare('insert into question (numero,category,question_link_type,question_link,question_label,reponse_type,option_A,option_B,option_C,option_D,reponse) values (:numero,:category,:question_link_type,:question_link,:question_label,:reponse_type,:option_A,:option_B,:option_C,:option_D,:reponse)');
+        $statement = $conexion->prepare('insert into question (numero,category,question_link_type,question_link,question_label,reponse_type,option_a,option_b,option_c,option_d,reponse) values (:numero,:category,:question_link_type,:question_link,:question_label,:reponse_type,:option_a,:option_b,:option_c,:option_d,:reponse)');
 
 
         $reponse = $statement->execute(array(
@@ -35,14 +35,71 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             ":question_link" => $question_link,
             ":question_label" => $question_label,
             ":reponse_type" => $reponse_type,
-            ":option_A" => $option_A,
-            ":option_B" => $option_B,
-            ":option_C" => $option_C,
-            ":option_D" => $option_D,
+            ":option_a" => $option_a,
+            ":option_b" => $option_b,
+            ":option_c" => $option_c,
+            ":option_d" => $option_d,
             ":reponse" => $reponse
         ));
 
         $results = $statement->fetch();
+    } catch (PDOException $e) {
+        echo "<br>" . $e->getMessage();
+    }
+}
+
+if ($_SERVER['REQUEST_METHOD'] == 'PUT') {
+    parse_str(file_get_contents('php://input'), $_PUT);
+    $id = $_PUT['id'];
+    $numero = $_PUT['numero'];
+    $category = $_PUT['category'];
+    $question_link_type = $_PUT['question_link_type'];
+    $question_link = $_PUT['question_link'];
+    $question_label = $_PUT['question_label'];
+    $reponse_type = $_PUT['reponse_type'];
+    $option_a = $_PUT['option_a'];
+    $option_b = $_PUT['option_b'];
+    $option_c = $_PUT['option_c'];
+    $option_d = $_PUT['option_d'];
+    $reponse = $_PUT['reponse'];
+
+    try {
+
+        $statement = $conexion->prepare('update question set numero= :numero, category= :category, question_link_type= :question_link_type, question_link= :question_link, question_label= :question_label, reponse_type= :reponse_type, option_a= :option_a, option_b= :option_b, option_c= :option_c, option_d= :option_d, reponse=:reponse where id = :id');
+        $reponse = $statement->execute(array(
+            ":id" => $id,
+            ":numero" => $numero,
+            ":category" => $category,
+            ":question_link_type" => $question_link_type,
+            ":question_link" => $question_link,
+            ":question_label" => $question_label,
+            ":reponse_type" => $reponse_type,
+            ":option_a" => $option_a,
+            ":option_b" => $option_b,
+            ":option_c" => $option_c,
+            ":option_d" => $option_d,
+            ":reponse" => $reponse
+        ));
+
+        $results = $statement->fetch();
+    } catch (PDOException $e) {
+        echo "<br>" . $e->getMessage();
+    }
+}
+
+if ($_SERVER['REQUEST_METHOD'] == 'DELETE') {
+    $query_params = array();
+    parse_str($_SERVER['QUERY_STRING'], $query_params);
+    $id = filter_var($query_params["id"], FILTER_SANITIZE_NUMBER_INT);
+
+    try {
+        $statement = $conexion->prepare('DELETE FROM question WHERE id = :id');
+        $reponse = $statement->execute(array(
+            ":id" => $id,
+        ));
+
+        $results = $statement->fetch();
+        session_commit();
     } catch (PDOException $e) {
         echo "<br>" . $e->getMessage();
     }
