@@ -39,7 +39,7 @@
             <p>Lisez calmement les énoncés de votre exercice</p>
 
             <div id="page-control">
-                <a href="menu.html" title="Menu" class="retourne">RETOURNER AU MENU</a>
+                <a href="home.php" title="Menu" class="retourne">RETOURNER AU MENU</a>
                 <a href="#" id="button-commence-test" class="btn">COMMENCER LE TEST </a>
             </div>
 
