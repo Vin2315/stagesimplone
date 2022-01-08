@@ -73,7 +73,7 @@ function onSubmit(event) {
 	const resultat = recupererReponsesFormulaire();
 
 	const estValide = validerFormulaire();
-	if (true) {
+	if (estValide) {
 		// Envoyer une requete au serveur
 		envoyerResultat(resultat);
 	} else {

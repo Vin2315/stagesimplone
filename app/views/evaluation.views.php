@@ -81,7 +81,7 @@
 
                 <div id="question-<?php echo $question["numero"]; ?>" class="img-answer-block">
                     <?php
-                    foreach (array('A', 'B', 'C', 'D') as $letter) {
+                    foreach (array('a', 'b', 'c', 'd') as $letter) {
                     ?>
                         <div class="img-answer">
                             <input type="radio" name="question<?php echo $question["numero"]; ?>" value="<?php echo $letter; ?>" id="q<?php echo $question["numero"]; ?>-r<?php echo $letter; ?>">
@@ -143,7 +143,7 @@
             </ul>
             <img src="assets/img/nice.png" class="img-moyenne" />
 
-            <textarea id="test-redaction-textarea" name="message" rows="10" placeholder="Votre message (de 45 à 60 mots)">
+            <textarea id="test-redaction-textarea" name="message" rows="10" placeholder="Votre message (de 45 à 60 mots)" value="">
 			</textarea>
             <div>
                 <button class="button" type="submit"> Envoyer </button>
