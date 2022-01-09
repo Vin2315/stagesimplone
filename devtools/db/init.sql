@@ -13,6 +13,8 @@ create table evaluation (
   user_id int REFERENCES user(id) ON DELETE CASCADE ON UPDATE CASCADE,
   reponses varchar(255),
   redaction varchar(512),
+  pourcentage_reussite int,
+  note_redaction int,
   primary key(id)
 );
 create table question (
@@ -67,7 +69,7 @@ values
     "assets/img/img2.jpg",
     "assets/img/img3.jpg",
     "assets/img/img4.jpg",
-    "A"
+    "a"
   ),
   (
     2,
@@ -81,7 +83,7 @@ values
     "Verte",
     "Rouge",
     "Bleue",
-    "A"
+    "a"
   ),
   (
     3,
@@ -95,7 +97,7 @@ values
     "assets/img/img6.jpg",
     "assets/img/img7.jpg",
     "assets/img/img8.jpg",
-    "A"
+    "a"
   ),
   (
     4,
@@ -109,7 +111,7 @@ values
     "assets/img/img10.jpg",
     "assets/img/img11.jpg",
     "assets/img/img12.jpg",
-    "A"
+    "a"
   ),
   (
     5,
@@ -123,7 +125,7 @@ values
     "en",
     "à la",
     "à",
-    "A"
+    "a"
   ),
   (
     6,
@@ -137,7 +139,7 @@ values
     "sommes",
     "à la",
     "à",
-    "A"
+    "a"
   ),
   (
     7,
@@ -151,7 +153,7 @@ values
     "aiment",
     "aime",
     "aimons",
-    "A"
+    "a"
   ),
   (
     8,
@@ -165,7 +167,7 @@ values
     "au magasin",
     "à l'hôtel de ville",
     "à la boulangerie",
-    "A"
+    "a"
   ),
   (
     9,
@@ -179,7 +181,7 @@ values
     "L'appartement n'est pas dans le centre-ville.",
     "L'appartement pas n'est dans le centre-ville.",
     "L'appartement est ne pas dans le centre-ville.",
-    "A"
+    "a"
   ),
   (
     10,
@@ -193,7 +195,7 @@ values
     "verts",
     "verte",
     "vertes",
-    "A"
+    "a"
   ),
   (
     11,
@@ -207,7 +209,7 @@ values
     "assets/img/img15.jpg",
     "assets/img/img16.jpg",
     "assets/img/img17.jpg",
-    "A"
+    "a"
   ),
   (
     12,
@@ -221,7 +223,7 @@ values
     "Tournez à droite",
     "Tournez à gauche",
     "Allez tout droit",
-    "A"
+    "a"
   ),
   (
     13,
@@ -235,7 +237,7 @@ values
     "se lèver",
     "nous levons",
     "me lève",
-    "A"
+    "a"
   ),
   (
     14,
@@ -249,5 +251,5 @@ values
     "Hier, les enfants a allé à a piscine.",
     "Hier, les enfants sont allé à la piscine",
     "Hier, les enfants est allé à la piscine",
-    "A"
+    "a"
   );

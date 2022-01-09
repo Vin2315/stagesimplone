@@ -123,7 +123,6 @@ article#presentation-card {
 .answer input:checked + label span {
   background-color: black;
   color: white;
-  margin: -6px;
   border-radius: 5px;
   padding: 5px;
   transition: 0.4s;
@@ -152,8 +151,8 @@ article#presentation-card {
 }
 
 .redaction-img {
-  width: 80vw;
-  max-height: 50vh;
+  width: 50vw;
+  max-height: 30vh;
 }
 
 /*otras imagenes primer grupo*/

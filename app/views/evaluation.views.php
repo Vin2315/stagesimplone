@@ -45,9 +45,10 @@
         </section>
 
         <?php
-        foreach ($questions as $question) {
+        for ($q = 1; $q <= sizeof($questions); $q++) {
+            $question = $questions[$q - 1];
         ?>
-            <section class="question-card card-carrousel" id="question_<?php echo $question["numero"]; ?>" data-numero="<?php echo $question["numero"]; ?>">
+            <section class="question-card card-carrousel" id="question_<?php echo $q; ?>" data-numero="<?php echo $question["numero"]; ?>">
 
                 <div class="question">
                     <h2><?php echo $question["category"]; ?></h2>
