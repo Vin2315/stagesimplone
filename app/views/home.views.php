@@ -62,8 +62,7 @@
 
                     </p>
 
-                    <a href="evaluation.php" class="btn" title="commence votre test">Commencer
-                        ==></a>
+                    <a href="evaluation.php" class="btn" title="commence votre test">Commencer ==></a>
 
                 </section>
                 <img id='hero-img' src=" ./assets/img/français.jpg" alt="" data-aos="zoom-out-up" />

@@ -38,7 +38,7 @@
         </select><br><br>
 
         <label for="question_link">QUESTION_LINK:</label><br>
-        <input type="url" id="question_link" name="question_link"><br><br><br>
+        <input type="text" id="question_link" name="question_link"><br><br><br>
 
 
         <label for="question_label">QUESTION_LABEL:</label><br>

@@ -21,9 +21,12 @@ function recupererReponse(id) {
 	}
 }
 
+/**
+ * Retourne toutes les reponses de chaque question sous forme d'objet
+ */
 function recupererReponsesFormulaire() {
 	const reponses = {};
-	for (let index = 1; index < 15; index++) {
+	for (let index = 1; index < recupererNombreDeQuestions(); index++) {
 		reponses['question_' + index] = recupererReponse('question_' + index);
 	}
 	// Recupere la 15e question qui est la redaction
@@ -32,58 +35,20 @@ function recupererReponsesFormulaire() {
 	return reponses;
 }
 
-function reponseformulaire() {
-	overall.addEventListener('click', function () {
-		e.preventDefault();
-	});
-	for (var i = 0; i < radio.length; i++) {
-		question[i].addEventListener('click', updateDisplay);
-	}
-	function updateDisplay() {
-		var checkedCount = 1;
-		for (var i = 0; i < question; i++) {
-			if (question[i].checked) {
-				reponse++;
-			}
-		}
-		if (checkedCount === 0) {
-			overall.checked = false;
-			overall.indeterminate = false;
-		} else if (checkedCount === question.length) {
-			overall.checked = true;
-			overall.indeterminate = false;
-		} else {
-			overall.checked = false;
-			overall.indeterminate = true;
-		}
-	}
-}
-
-// remplace
-function replacer(str, p1, p2, offset, s) {
-	return str + ' - ' + p1 + ' , ' + p2;
-}
-function replacer(au, en, àla, à) {
-	return str + ' - ' + p1 + ' , ' + p2;
-}
-
-/* cet funtion est appelle quan valide le formulaire */
+/**
+ * cette funtion est appelee quand le formulaire est soumis
+ */
 function onSubmit(event) {
 	event.preventDefault();
 	const resultat = recupererReponsesFormulaire();
 
-	const estValide = validerFormulaire();
-	if (estValide) {
+	const questionsManquantes = Object.entries(resultat).filter(([key, value]) => key !== 'redaction' && !Boolean(value));
+	if (questionsManquantes.length === 0) {
 		// Envoyer une requete au serveur
 		envoyerResultat(resultat);
+		document.getElementById('evaluation-submit-button').disabled = true;
+
 	} else {
-		// Recuperer la liste des questions qui manquent
-		const questionsManquantes = Object.entries(resultat).filter(
-			(question) => {
-				const valeurQuestion = question[1];
-				return valeurQuestion === null;
-			},
-		);
 		// Je recupere pour chaque [label, valeur] de chaque question son label, puis a la 10e position le chiffre de la question
 		const numerosQuestionsManquantes = questionsManquantes.map((question) =>
 			question[0].substring(9),
@@ -99,12 +64,10 @@ function onSubmit(event) {
 }
 
 function envoyerResultat(resultat) {
-	console.log(resultat);
-	const _resultat = Object.values(resultat);
-	delete _resultat.redaction;
-	const reponses = _resultat
+	const submitButton = document.getElementById('evaluation-submit-button')
 
-	const redaction = resultat.redaction;
+	const { redaction, ...reponses } = resultat;
+	submitButton.disabled = true;
 	fetch('evaluation.php', {
 		method: 'POST',
 		headers: { 'Content-Type': 'application/json' },
@@ -115,6 +78,10 @@ function envoyerResultat(resultat) {
 	}).then((response) => {
 		// TODO: Rediriger vers page de succes
 		console.log(response.text());
+		window.location = "evaluation_result.php"
+	}).catch(err => {
+		submitButton.disabled = false;
+		alert(`Quelquechose s'est mal passe: ${err}`);
 	});
 }
 
@@ -123,28 +90,10 @@ function init() {
 	initEventListeners();
 }
 
+/**
+ * Cette fonction initialise les elements HTML a creer dynamiquement
+ */
 function initHTMLElements() {
-	const headerQuestionnaire = document.getElementById(
-		'liste-bouton-raccourci',
-	);
-
-	// Crée autant de boutons que de nombre de questions
-	const nombreDeQuestions = recupererNombreDeQuestions();
-	for (
-		let numeroQuestion = 1;
-		numeroQuestion < nombreDeQuestions + 1;
-		numeroQuestion++
-	) {
-		const elementBouton = document.createElement('button');
-		elementBouton.innerHTML = numeroQuestion;
-		elementBouton.className = 'raccourci-question';
-		elementBouton.addEventListener('click', (e) =>
-			goToCard(numeroQuestion),
-		);
-
-		// Injecte le bouton dans le DOM
-		headerQuestionnaire.appendChild(elementBouton);
-	}
 }
 
 function initEventListeners() {
@@ -178,23 +127,13 @@ function recupererNombreDeQuestions() {
 }
 
 function validerQuestion(numeroQuestion, cardDestination) {
-	const questionCard = document.getElementById(`question_${numeroQuestion}`);
 	// Si la question est validée, la progress bar avance
 	const questionEstValidee =
 		recupererReponse(`question_${numeroQuestion}`) !== null;
 	mettreAJourBoutonRaccourci(numeroQuestion, questionEstValidee);
 
 	if (questionEstValidee) {
-		const reponses = recupererReponsesFormulaire();
-		let nombreReponsesValides = 0;
-		for (let reponse of Object.values(reponses)) {
-			if (reponse !== null) {
-				nombreReponsesValides++;
-			}
-		}
-		const nombreDeQuestions = recupererNombreDeQuestions();
-		const progressBar = document.getElementById('niveau-completude-test');
-		progressBar.value = nombreReponsesValides * (100 / nombreDeQuestions);
+		mettreAJourBarreDeProgression();
 	}
 
 	goToCard(cardDestination);
@@ -213,6 +152,19 @@ function mettreAJourBoutonRaccourci(numeroQuestion, questionEstValidee) {
 	}
 }
 
+function mettreAJourBarreDeProgression() {
+	const reponses = recupererReponsesFormulaire();
+	let nombreReponsesValides = 0;
+	for (let reponse of Object.values(reponses)) {
+		if (reponse !== null) {
+			nombreReponsesValides++;
+		}
+	}
+	const nombreDeQuestions = recupererNombreDeQuestions();
+	const progressBar = document.getElementById('niveau-completude-test');
+	progressBar.value = nombreReponsesValides * (100 / nombreDeQuestions);
+}
+
 function goToCard(numeroCard) {
 	// Verifier si la question a été répondue
 	const carrouselElement = document.getElementById('formulaire_test');
@@ -225,12 +177,6 @@ function goToCard(numeroCard) {
 			.getElementById('header-questionnaire')
 			.classList.remove('hidden');
 	}
-}
-
-function validerFormulaire() {
-	///tous les questions son ok, mettre en rouge les pas valides
-	const resultat = recupererReponsesFormulaire();
-	return Object.values(resultat).every((valeur) => valeur !== null);
 }
 
 // Demarrage de l'app

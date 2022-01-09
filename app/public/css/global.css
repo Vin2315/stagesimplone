@@ -83,6 +83,9 @@ nav {
 }
 
 @media screen and (max-width: 800px) {
+  * {
+    font-size: 10px;
+  }
   #logo {
     width: 20%;
     /*height: 50px; /* CAMBIA LA ALTURA DE MI LOGO*/
@@ -424,6 +427,9 @@ footer {
 /**************************Breakpoints responsive************** */
 
 @media screen and (max-width: 800px) {
+  h2 {
+    font-size: 40px;
+  }
   #hero-img {
     width: 100%;
   }
@@ -475,6 +481,10 @@ footer {
 
   h1 {
     font-size: 40px;
+  }
+
+  h2 {
+    font-size: 30px;
   }
 
   /*aparesca mis barritas de menu*/

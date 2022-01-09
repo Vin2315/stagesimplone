@@ -11,7 +11,8 @@ include '../dbconn.php';
 
 if ($_SERVER['REQUEST_METHOD'] == 'GET') {
    $sql_select_questions = 'SELECT * FROM question ORDER BY numero';
-   $questions = $conexion->query($sql_select_questions);
+   $select_questions_statement = $conexion->query($sql_select_questions);
+   $questions = $select_questions_statement->fetchAll();
 }
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {

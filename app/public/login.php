@@ -30,8 +30,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $_SESSION['utilisateur'] = $utilisateur;
             header('Location: evaluation.php');
             exit();
-            //echo "Informations incorrectes"; 
-            // echo "Datos correctos"; 
         } else {
             $error .= '<li>Informations incorrectes</li>';
         }
