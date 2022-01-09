@@ -2,25 +2,37 @@ let question_id_a_updater = null;
 const title = document.getElementById('form_title');
 const form = document.getElementById('formulaire_question');
 const resetButton = document.getElementById('reset_button');
+const formError = document.getElementById('form-error');
 
 resetButton.addEventListener('click', demarrerCreation);
 form.addEventListener('submit', onFormSubmit);
 
 function onFormSubmit(e) {
     e.preventDefault();
-    const formData = new FormData(form);
-    console.log(formData)
-    if (question_id_a_updater) {
-        formData.set('id', question_id_a_updater);
-    }
-    const data = new URLSearchParams(formData);
+    formError.innerText = '';
 
+    const data = Object.fromEntries([...form.elements].filter(e => e.name).map(e => [e.name, e.value]));
+    if (question_id_a_updater) {
+        data.id = question_id_a_updater;
+    }
     fetch(`formulaire_question.php`, {
         method: question_id_a_updater === null ? 'POST' : 'PUT',
-        body: data
+        body: new URLSearchParams(data)
         // headers: { 'Content-Type': 'application/json' },,
     }).then((response) => {
-        console.log(response.text());
+        if (response.status !== 200) {
+            console.log('Looks like there was a problem. Status Code: ' +
+                response.status);
+            response.text().then(function (err) {
+                // L'approche est directe, mais on devrait cacher les details de certaines erreurs a l'utilisateur
+                formError.innerText = err;
+
+            });
+            return;
+        }
+
+        // C'est un raccourci, il faudrait a la fin renvoyer la nouvelle liste de questions et editer le DOM via du JS
+        location.reload();
     });
 }
 
@@ -50,6 +62,12 @@ function supprimerQuestion(id) {
         method: 'DELETE',
     }).then((response) => {
         console.log(response.text());
+        const question = document.getElementById(`question-${id}`);
+        question?.remove();
+        // C'est un raccourci, il faudrait a la fin renvoyer la nouvelle liste de questions et editer le DOM via du JS
+        location.reload();
+    }).catch(err => {
+        console.error(`Error:    ${err}`)
     });
 }
 
@@ -64,3 +82,15 @@ for (let index = 0; index < listQuestions.length; index++) {
     boutonSuppression.addEventListener('click', () => supprimerQuestion(id));
 
 }
+
+
+document.getElementById('numero').addEventListener('input', e => {
+    const nb = Number(e.target.value);
+    if (isNaN(nb) || nb <= 0) {
+        e.target.value = 1;
+    }
+})
+
+document.getElementById('question_link_type').addEventListener('change', e => {
+    document.getElementById('question_link').disabled = e.target.value === '';
+})

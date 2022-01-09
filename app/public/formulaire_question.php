@@ -44,7 +44,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
         $results = $statement->fetch();
     } catch (PDOException $e) {
-        echo "<br>" . $e->getMessage();
+        http_response_code(400);
+        echo $e->getMessage();
+        exit();
     }
 }
 
@@ -83,7 +85,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'PUT') {
 
         $results = $statement->fetch();
     } catch (PDOException $e) {
-        echo "<br>" . $e->getMessage();
+        http_response_code(400);
+        echo $e->getMessage();
+        exit();
     }
 }
 
@@ -101,9 +105,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'DELETE') {
         $results = $statement->fetch();
         session_commit();
     } catch (PDOException $e) {
-        echo "<br>" . $e->getMessage();
+        http_response_code(400);
+
+        echo $e->getMessage();
+        exit();
     }
 }
-
 require_once(VIEWS_PATH . "/formulaire_question.views.php");
-require_once(VIEWS_PATH . "/liste_questions.views.php");

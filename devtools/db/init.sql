@@ -10,14 +10,14 @@ create table user (
 );
 create table evaluation (
   id int not null auto_increment,
-  user_id int REFERENCES user(id),
+  user_id int REFERENCES user(id) ON DELETE CASCADE ON UPDATE CASCADE,
   reponses varchar(255),
   redaction varchar(512),
   primary key(id)
 );
 create table question (
   id int not null auto_increment,
-  numero int not null,
+  numero int not null unique,
   category varchar(255),
   question_link_type varchar(255),
   question_link varchar(512),
@@ -58,7 +58,7 @@ values
   (
     1,
     1,
-    "Compréhension écrite",
+    "Comprehension Ecrite",
     NULL,
     NULL,
     "Sélectionnez l’infirmier",
@@ -72,7 +72,7 @@ values
   (
     2,
     2,
-    "Compréhension écrite",
+    "Comprehension Ecrite",
     "img",
     "https://www.tooadhesifs.com/5425-pdt_540/a0003-ps-film-jaune-citron-en-050m.jpg",
     "De quelle couleur est cette image ?",
