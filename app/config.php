@@ -8,13 +8,13 @@
     you'll only need to update it here.
 */
 date_default_timezone_set('Europe/Paris');
-
+// include 'environment.php';
 $config = array(
     "db" => array(
-        "dbname" => $_ENV["DB_NAME"] or "etudiants",
-        "username" => $_ENV["DB_USER"] or "root",
-        "password" => $_ENV["DB_PASSWORD"] or "password",
-        "host" => $_ENV["DB_HOST"] or "mysql:3306"
+        "dbname" => isset($_ENV["DB_NAME"]) ? $_ENV["DB_NAME"] : "etudiants",
+        "username" => isset($_ENV["DB_USER"]) ? $_ENV["DB_USER"] : "root",
+        "password" => isset($_ENV["DB_PASSWORD"]) ? $_ENV["DB_PASSWORD"] : "password",
+        "host" => isset($_ENV["DB_HOST"]) ? $_ENV["DB_HOST"] : "mysql:3306"
     ),
     // "urls" => array(
     //     "baseUrl" => "http://example.com"

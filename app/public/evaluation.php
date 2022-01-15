@@ -1,9 +1,9 @@
 <?php session_start();
-require_once("../config.php");
 
 if (!isset($_SESSION['utilisateur'])) {
    header('Location: login.php');
 }
+include "../config.php";
 $utilisateur_connecte = $_SESSION['utilisateur'];
 
 include '../dbconn.php';
