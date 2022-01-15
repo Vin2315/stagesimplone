@@ -2,6 +2,6 @@
     "name": "vini/stagesimplone",
     "require": {},
     "scripts": {
-        "deploy": "git push heroku main"
+        "deploy": "git push heroku develop:main"
     }
 }

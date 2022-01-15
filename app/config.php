@@ -11,10 +11,10 @@ date_default_timezone_set('Europe/Paris');
 
 $config = array(
     "db" => array(
-        "dbname" => "etudiants",
-        "username" => "root",
-        "password" => "password",
-        "host" => "mysql:3306"
+        "dbname" => $_ENV["DB_NAME"] or "etudiants",
+        "username" => $_ENV["DB_USER"] or "root",
+        "password" => $_ENV["DB_PASSWORD"] or "password",
+        "host" => $_ENV["DB_HOST"] or "mysql:3306"
     ),
     // "urls" => array(
     //     "baseUrl" => "http://example.com"
