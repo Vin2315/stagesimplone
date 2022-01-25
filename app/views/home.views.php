@@ -31,7 +31,9 @@
                 <a href="votre_niveau.php">COURS</a>
                 <a href="#">CONTACT</a>
                 <?php
-                if (isset($_SESSION['utilisateur'])) {
+                # je verifie que une valeur est associee a la cle "utilisateur" dans l'array $_SESSION
+
+                if (isset($_SESSION['utilisateur'])) { # ==> renvoie True si l'utilisateur est connecte
                 ?>
                     <form method="post">
                         <input type="submit" name="logout" class="btn-logout" value="Logout" />

@@ -42,6 +42,15 @@ values
     '$2y$10$u7GCIHJPq81TqOw7YddOPeTpaZBJux0Br977OLBqBuAZ0qo86rSuy'
   );
 insert into
+  user (id, utilisateur, email, pass)
+values
+  (
+    2,
+    'vini',
+    'vini@outlook.fr',
+    '$2y$10$u7GCIHJPq81TqOw7YddOPeTpaZBJux0Br977OLBqBuAZ0qo86rSuy'
+  );
+insert into
   question (
     id,
     numero,
